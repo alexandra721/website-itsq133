@@ -10,9 +10,8 @@
     {{ HTML::style('font-awesome-4.2.0/css/font-awesome.min.css') }}
 
     {{ HTML::script('js/jquery-1.11.0.min.js') }}
-    {{ HTML::script('js/boostrap.min.js') }}
-    {{ HTML::script('js/sb-admin-2.js') }}
-    {{ HTML::script('js/npm.js') }}
+    {{ HTML::script('js/bootstrap.min.js') }}
+    {{ HTML::script('js/custom.js') }}
 
     @yield('master-head')
 </head>

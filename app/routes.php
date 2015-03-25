@@ -22,10 +22,11 @@ Route::get('/', 'WebMainController@index');
 
 // ADMIN ROUTES -- START
 Route::get('/admin/', 'AdminController@index');
-Route::get('/admin/login', 'AdminController@login');
+Route::get('/admin/login', 'AdminController@index');
+Route::post('/admin/doLogin', 'AdminController@doLogin');
 
 Route::group(array('before' => 'auth'), function(){
-    
+    Route::get('/admin/home', 'AdminController@home');
 });
 
 // ADMIN ROUTES -- END

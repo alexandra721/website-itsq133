@@ -4,5 +4,11 @@
 
 .pull-right-button {
     float : right;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
+}
+
+.custom-footer {
+    text-align: center;
+    font-size: 0.7em;
+    color : #7F8C8D;
 }
