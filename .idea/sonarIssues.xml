@@ -53,12 +53,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/home.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/index.blade.php">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/layouts/master.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/users.blade.php">
           <value>
             <set />
           </value>
@@ -74,6 +84,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/public/css/custom.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/public/css/simple-sidebar.css">
           <value>
             <set />
           </value>
