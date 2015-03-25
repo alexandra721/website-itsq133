@@ -28,6 +28,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/database/migrations/2015_03_25_105727_create_posts_table.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/database/migrations/2015_03_25_105803_create_comments_table.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
           <value>
             <set />
@@ -39,6 +49,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/filters.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/Comment.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/Post.php">
           <value>
             <set />
           </value>
@@ -64,6 +84,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/layouts/master.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/profile.blade.php">
           <value>
             <set />
           </value>

@@ -18,10 +18,11 @@ function ajaxLogin(formMain, formButton, divMsg, formInput){
                     if(data['bool']){
                         location.href = "/admin/home";
                     }else{
-                        divMsg.empty().append(' <i class="fa fa-warning" style="color: #E74C3C"></i> Invalid login credentials');
+//                        divMsg.empty().append(' <i class="fa fa-warning" style="color: #E74C3C"></i> Invalid login credentials');
+                        divMsg.empty().append(data['msg']);
                     }
                 },error : function(){
-
+                    divMsg.empty().append(' <i class="fa fa-warning" style="color: #E74C3C"></i> No network Connectivity');
                 }
             })
         }

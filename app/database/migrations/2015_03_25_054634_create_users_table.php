@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration {
             $table->string('lastname');
             $table->string('role')->default('USER');
             $table->string('status')->default('ACTIVATED');
+            $table->string('profile_photo')->default('NONE');
             $table->string('remember_token')->default(0);
             $table->timestamps();
         });

@@ -20,9 +20,19 @@ class AdminController extends \BaseController {
             'password'  =>  Input::get('password')
         );
 
-        return array(
-            'bool' => Auth::attempt($userData)
-        );
+        if(Auth::attempt($userData)){
+            $userModel = User::where('username', Input::get('username'));
+            if(Auth::user()->status != 'ACTIVATED'){
+                Auth::logout();
+                return array('msg' => ' <i class="fa fa-warning" style="color: #E74C3C"></i> Account has been deactivated.');
+            }else if(Auth::user()->role != 'ADMIN'){
+                Auth::logout();
+                return array('msg' => ' <i class="fa fa-warning" style="color: #E74C3C"></i> Invalid login credentials.');
+            }
+            return array('bool' => true);
+        }else{
+            return array('msg' => ' <i class="fa fa-warning" style="color: #E74C3C"></i> Invalid login credentials.');
+        }
     }
 
     public function home(){
@@ -35,7 +45,7 @@ class AdminController extends \BaseController {
     }
 
     public function users(){
-        return View::make('admin.users')->with('users', User::all());
+        return View::make('admin.users')->with('users', User::all())->with('user_count', User::whereNotIn('id', [Auth::user()->id])->count());
     }
 
     public function deactivate($id){
@@ -47,4 +57,7 @@ class AdminController extends \BaseController {
         return Redirect::to('/admin/users');
     }
 
+    public function profile($id){
+        return View::make('admin.profile')->with('user', User::where('id', $id)->first())->with('posts', Post::where('user_id', $id))->with('comments', Comment::where('user_id', $id));
+    }
 }

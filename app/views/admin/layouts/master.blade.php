@@ -87,6 +87,7 @@
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
 <!--                    <li class="active"><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>-->
+                    <li><a href="/admin/home"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
                     <li><a href="/admin/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Posts</a></li>

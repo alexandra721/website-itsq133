@@ -26,11 +26,12 @@ Route::get('/admin/login', 'AdminController@index');
 Route::post('/admin/doLogin', 'AdminController@doLogin');
 Route::get('/admin/logout', 'AdminController@logout');
 
-Route::group(array('before' => 'auth'), function(){
+Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/home', 'AdminController@home');
     Route::get('/admin/users', 'AdminController@users');
     Route::get('/admin/deactivate/{id}', 'AdminController@deactivate');
     Route::get('/admin/activate/{id}', 'AdminController@activate');
+    Route::get('/admin/profile/{id}', 'AdminController@profile');
 });
 
 // ADMIN ROUTES -- END

@@ -23,50 +23,56 @@
 @section('master-body')
     <h1><i class="fa fa-users"></i> User Management</h1>
     <hr/>
-    <table class="table table-responsive" style="font-size: 1em;">
-        <thead>
-        <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Date Joined</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-            @foreach($users as $user)
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            List of users : Total of {{ $user_count }}
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive" style="font-size: 1em;">
+                <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Date Joined</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($users as $user)
                 @if($user->id != Auth::user()->id)
-                    <tr>
-                        <td class="username_{{$user->id}}"> {{ $user->username }} </td>
-                        <td> {{ $user->email }} </td>
-                        <td class="first_{{$user->id}}"> {{ $user->firstname }} </td>
-                        <td class="last_{{$user->id}}"> {{ $user->lastname }} </td>
-                        <td> {{ $user->role }} </td>
-                        <td>
-                            @if($user->status == 'DEACTIVATED')
-                                <b><font color="red">{{ $user->status }}</font></b>
-                            @else
-                            <b><font color="green">{{ $user->status }}</font></b>
-                            @endif
-                        </td>
-                        <td> {{ $user->created_at }} </td>
-                        <td>
-                            <a href="/admin/profile/{{$user->id}}" style="color: orange"><i class="fa fa-edit"></i></a>
-                            @if($user->status == 'ACTIVATED')
-                            <a class="a-deac" href="#" data-href="/admin/deactivate/{{$user->id}}" style="color: red;" id="{{$user->id}}" data-info="{{ $user->id }}"><i class="fa fa-times"></i></a>
-                            @else
-                            <a class="a-acti" href="#" data-href="/admin/activate/{{$user->id}}" style="color: green;" id="{{$user->id}}" data-info="{{ $user->id }}"><i class="fa fa-check"></i></a>
-                            @endif
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="username_{{$user->id}}"> {{ $user->username }} </td>
+                    <td> {{ $user->email }} </td>
+                    <td class="first_{{$user->id}}"> {{ $user->firstname }} </td>
+                    <td class="last_{{$user->id}}"> {{ $user->lastname }} </td>
+                    <td> {{ $user->role }} </td>
+                    <td>
+                        @if($user->status == 'DEACTIVATED')
+                        <b><font color="red">{{ $user->status }}</font></b>
+                        @else
+                        <b><font color="green">{{ $user->status }}</font></b>
+                        @endif
+                    </td>
+                    <td> {{ $user->created_at }} </td>
+                    <td>
+                        <a href="/admin/profile/{{$user->id}}" style="color: orange"><i class="fa fa-edit"></i></a>
+                        @if($user->status == 'ACTIVATED')
+                        <a class="a-deac" href="#" data-href="/admin/deactivate/{{$user->id}}" style="color: red;" id="{{$user->id}}" data-info="{{ $user->id }}"><i class="fa fa-times"></i></a>
+                        @else
+                        <a class="a-acti" href="#" data-href="/admin/activate/{{$user->id}}" style="color: green;" id="{{$user->id}}" data-info="{{ $user->id }}"><i class="fa fa-check"></i></a>
+                        @endif
+                    </td>
+                </tr>
                 @endif
-            @endforeach
-        </tbody>
-    </table>
-
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 <!--    CODES FOR MODAL-->
 <div class="modal fade" id="deacModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
