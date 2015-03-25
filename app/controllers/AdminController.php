@@ -50,14 +50,21 @@ class AdminController extends \BaseController {
 
     public function deactivate($id){
         User::where('id', $id)->update(array('status' => 'DEACTIVATED'));
-        return Redirect::to('/admin/users');
+        return Redirect::back();
+//        return Redirect::to('/admin/users');
     }
     public function activate($id){
         User::where('id', $id)->update(array('status' => 'ACTIVATED'));
-        return Redirect::to('/admin/users');
+        return Redirect::back();
+//        return Redirect::to('/admin/users');
     }
 
     public function profile($id){
         return View::make('admin.profile')->with('user', User::where('id', $id)->first())->with('posts', Post::where('user_id', $id))->with('comments', Comment::where('user_id', $id));
+    }
+
+    public function changepass($id){
+        User::where('id', $id)->update(array('password' => Hash::make(Input::get('changepass-1'))));
+        return array('bool' => true);
     }
 }

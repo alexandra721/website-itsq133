@@ -32,6 +32,7 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/deactivate/{id}', 'AdminController@deactivate');
     Route::get('/admin/activate/{id}', 'AdminController@activate');
     Route::get('/admin/profile/{id}', 'AdminController@profile');
+    Route::post('/admin/changepass/{id}', 'AdminController@changepass');
 });
 
 // ADMIN ROUTES -- END
