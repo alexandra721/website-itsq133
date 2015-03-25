@@ -19,7 +19,8 @@ App::before(function($request)
 
 App::after(function($request, $response)
 {
-	//
+    // THIS CODE PREVENTS BACKING UP TO PAGES (WITH THE USE OF "BACK BUTTON") AFTER LOGGING OUT - JAN SARMIENTO
+    $response->headers->set("Cache-Control","no-cache, no-store, must-revalidate");
 });
 
 /*
@@ -43,7 +44,8 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('login');
+//			return Redirect::guest('login');
+			return Redirect::to('/admin/login');
 		}
 	}
 });
