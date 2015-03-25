@@ -58,9 +58,9 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!-- Brand -->
-                    <div class="brand-name-wrapper">
-                        <a class="navbar-brand" href="#">
-                            Logged in as {{ Auth::user()->firstname }}
+                    <div class="brand-name-wrapper" style="background-color: #34495E;">
+                        <a class="navbar-brand" style="color: white">
+                            <i class="fa fa-star" style="color: #F1C40F"></i> {{ Auth::user()->firstname }}
                         </a>
                     </div>
 

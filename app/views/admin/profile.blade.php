@@ -36,6 +36,10 @@
                     <td style="text-align: left; padding-left: 2em; font-weight: bold">{{ $user->firstname }} {{ $user->lastname }}</td>
                 </tr>
                 <tr>
+                    <td style="width: 20%; text-align: right">Username</td>
+                    <td style="text-align: left; padding-left: 2em; font-weight: bold">{{ $user->username}}</td>
+                </tr>
+                <tr>
                     <td style="width: 20%; text-align: right">Email</td>
                     <td style="text-align: left; padding-left: 2em; font-weight: bold">{{ $user->email}}</td>
                 </tr>

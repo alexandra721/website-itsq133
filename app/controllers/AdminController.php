@@ -45,7 +45,7 @@ class AdminController extends \BaseController {
     }
 
     public function users(){
-        return View::make('admin.users')->with('users', User::all())->with('user_count', User::whereNotIn('id', [Auth::user()->id])->count());
+        return View::make('admin.users')->with('users', User::paginate(5))->with('user_count', User::whereNotIn('id', [Auth::user()->id])->count());
     }
 
     public function deactivate($id){

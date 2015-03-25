@@ -28,7 +28,7 @@
             List of users : Total of {{ $user_count }}
         </div>
         <div class="panel-body">
-            <table class="table table-responsive" style="font-size: 1em;">
+            <table class="table table-responsive table-striped table-hover" style="font-size: 1em;">
                 <thead>
                 <tr>
                     <th>Username</th>
@@ -71,6 +71,9 @@
                 @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="panel-footer" style="text-align: center; padding: 0px;">
+            {{ $users->links() }}
         </div>
     </div>
 <!--    CODES FOR MODAL-->
