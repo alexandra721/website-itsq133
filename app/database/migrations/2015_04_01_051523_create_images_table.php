@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTable extends Migration {
+class CreateImagesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,12 @@ class CreatePostsTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('posts', function ($table) {
+        Schema::create('images', function ($table) {
             $table->increments('id');
-            $table->integer('user_id')->unique();
-            $table->string('content');
+            $table->integer('user_id');
+            $table->string('path');
+            $table->string('title');
+            $table->string('description');
             $table->timestamps();
         });
 	}

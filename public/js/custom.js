@@ -75,7 +75,6 @@ function changepassValidation(pass1, pass2, passBtn, passMsg){
 
 function submitChangepass(form, btn, div){
     btn.click(function(){
-        alert(form.attr('action'));
         $.ajax({
             url     : form.attr('action'),
             type    : 'POST',

@@ -76,17 +76,7 @@
 <hr/>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Posts of {{ $user->firstname }} {{ $user->lastname }} : Total of {{ $posts->count() }}
-    </div>
-    <div class="panel-body">
-        @if($posts->count() == 0)
-        <center><i>No posts found.</i></center>
-        @endif
-    </div>
-</div>
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        Comments of {{ $user->firstname }} {{ $user->lastname }} : Total of {{ $posts->count() }}
+        Comments of {{ $user->firstname }} {{ $user->lastname }} : Total of {{ $comments->count() }}
     </div>
     <div class="panel-body">
         @if($comments->count() == 0)

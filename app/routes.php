@@ -1,5 +1,6 @@
 <?php
-
+// REMINDERS - By Jan Sarmiento
+//    on the php folder>file php.ini uncomment the extension=php_fileinfo.dll line
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -17,14 +18,31 @@ Route::get('/', function()
 });
 
 // WEBSITE ROUTES -- START
-Route::get('/', 'WebMainController@index');
+Route::group(array('before' => 'DESTROY-ADMIN'), function(){
+    Route::get('/', 'WebMainController@index');
+    Route::get('/home', 'WebMainController@index');
+    Route::get('/gallery', 'WebMainController@gallery');
+    Route::get('/about', 'WebMainController@about');
+    Route::get('/contactus', 'WebMainController@contactus');
+    Route::get('/doLogout', 'WebMainController@doLogout');
+    Route::post('/doLogin', 'WebMainController@doLogin');
+    Route::post('/doRegister', 'WebMainController@doRegister');
+});
+
+Route::group(array('before' => 'ROUTE-PROTECT'), function(){
+    Route::get('/login', 'WebMainController@login');
+    Route::get('/register', 'WebMainController@register');
+});
 // WEBSITE ROUTES -- END
 
 // ADMIN ROUTES -- START
-Route::get('/admin/', 'AdminController@index');
-Route::get('/admin/login', 'AdminController@index');
-Route::post('/admin/doLogin', 'AdminController@doLogin');
-Route::get('/admin/logout', 'AdminController@logout');
+
+Route::group(array('before' => 'DESTROY-USER'), function(){
+    Route::get('/admin/', 'AdminController@index');
+    Route::get('/admin/login', 'AdminController@index');
+    Route::post('/admin/doLogin', 'AdminController@doLogin');
+    Route::get('/admin/logout', 'AdminController@logout');
+});
 
 Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/home', 'AdminController@home');
@@ -33,6 +51,10 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/activate/{id}', 'AdminController@activate');
     Route::get('/admin/profile/{id}', 'AdminController@profile');
     Route::post('/admin/changepass/{id}', 'AdminController@changepass');
+    Route::get('/admin/comments', 'AdminController@comments');
+    Route::get('/admin/images', 'AdminController@images');
+    Route::get('/admin/videos', 'AdminController@videos');
+    Route::post('/admin/upload', 'AdminController@upload');
 });
 
 // ADMIN ROUTES -- END

@@ -50,6 +50,28 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('DESTROY-ADMIN', function(){
+    if(Auth::check()){
+        if(Auth::user()->role == 'ADMIN'){
+            Auth::logout();
+        }
+    }
+});
+
+Route::filter('DESTROY-USER', function(){
+    if(Auth::check()){
+        if(Auth::user()->role != 'ADMIN'){
+            Auth::logout();
+        }
+    }
+});
+
+Route::filter('ROUTE-PROTECT', function(){
+    if(Auth::check()){
+        return Redirect::to('/login');
+    }
+});
+
 Route::filter('ADMIN', function()
 {
     if(Auth::check()){

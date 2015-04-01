@@ -9,10 +9,26 @@
     {{ HTML::style('css/simple-sidebar.css') }}
     {{ HTML::style('css/custom.css') }}
     {{ HTML::style('font-awesome-4.2.0/css/font-awesome.min.css') }}
+    {{ HTML::style('css/blueimp-gallery.min.css') }}
 
     {{ HTML::script('js/jquery-1.11.0.min.js') }}
     {{ HTML::script('js/bootstrap.min.js') }}
     {{ HTML::script('js/custom.js') }}
+    {{ HTML::script('js/blueimp-gallery.min.js') }}
+
+    <style>
+        .thumbnail-custom {
+            height: 35px;
+            border: solid 0.07em;
+            border-color: #000000;
+            border-radius: 0.2em;
+            /*width: 90%;*/
+            /*position:relative;*/
+            /*left: 50%;*/
+            /*top: 50%;*/
+            /*transform: translate(-50%, -50%);*/
+        }
+    </style>
 
     <script>
         $(function () {
@@ -53,14 +69,16 @@
                     <!-- Hamburger -->
                     <button type="button" class="navbar-toggle">
                         <span class="sr-only">Toggle navigation</span>
+
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <!-- Brand -->
                     <div class="brand-name-wrapper" style="background-color: #34495E;">
-                        <a class="navbar-brand" style="color: white">
-                            <i class="fa fa-star" style="color: #F1C40F"></i> {{ Auth::user()->firstname }}
+                        <a href="admin/yprofile" class="navbar-brand" style="color: white; padding-top: 0.5em;">
+<!--                            <i class="fa fa-star" style="color: #F1C40F"></i>-->
+                            <img class="thumbnail-custom"  src="{{ Auth::user()->profile_photo }}" style="display: inline"/>&nbsp;&nbsp;&nbsp;{{ Auth::user()->firstname }}
                         </a>
                     </div>
 
@@ -89,8 +107,8 @@
 <!--                    <li class="active"><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>-->
                     <li><a href="/admin/home"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
                     <li><a href="/admin/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Posts</a></li>
+                    <li><a href="/admin/comments"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>
+<!--                    <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Posts</a></li>-->
 
                     <!-- Dropdown-->
                     <li class="panel panel-default" id="dropdown">
@@ -101,8 +119,8 @@
                         <div id="dropdown-lvl1" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="#"><span class="glyphicon glyphicon-picture"></span> Images</a></li>
-                                    <li><a href="#"><span class="glyphicon glyphicon-film"></span> Videos</a></li>
+                                    <li><a href="/admin/images"><span class="glyphicon glyphicon-picture"></span> Images</a></li>
+                                    <li><a href="/admin/videos"><span class="glyphicon glyphicon-film"></span> Videos</a></li>
 <!---->
 <!--                                     Dropdown level 2 -->
 <!--                                    <li class="panel panel-default" id="dropdown">-->
