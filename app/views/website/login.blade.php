@@ -19,7 +19,9 @@
 <div class="col-md-offset-4 col-md-4 website-login-panel panel-body">
     <div class="login-panel-header">
         <h4>
-            {{ @$slogan->content }}
+            @foreach($slogans as $slogan)
+                {{ @$slogan->content }}
+            @endforeach
         </h4>
     </div>
     <hr/>

@@ -22,7 +22,9 @@
     <div class="col-md-offset-2 col-md-8 website-login-panel panel-body">
         <div class="login-panel-header">
             <h4 style="text-align: center;">
-                {{ @$slogan->content }}
+                @foreach($slogans as $slogan)
+                    {{ @$slogan->content }}
+                @endforeach
             </h4>
         </div>
         <hr style="margin-bottom: 0.8em;"/>

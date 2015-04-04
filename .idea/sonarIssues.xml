@@ -123,6 +123,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/general.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/home.blade.php">
           <value>
             <set />
@@ -219,6 +224,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/public/js/custom.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/public/js/jquery.cleditor.js">
           <value>
             <set />
           </value>

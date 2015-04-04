@@ -127,27 +127,90 @@ class AdminController extends \BaseController {
     }
 
     public function updateAboutus(){
-        if(strlen(Input::get('aboutus')) > 254){
-//            $string = str_split(Input::get('aboutus'), 254);
-            $string = str_split(Input::get('aboutus'), 254);
-        }else{
-            $string = Input::get('aboutus');
-        }
-
         Content::where('type', 'aboutus')->delete();
-
-        for($i = 0; $i < count($string); $i++){
+        if(strlen(Input::get('aboutus')) > 254){
+            $string = str_split(Input::get('aboutus'), 254);
+            for($i = 0; $i < count($string); $i++){
+                Content::insert(array(
+                    'type'      =>  'aboutus',
+                    'content'   =>  $string[$i],
+                    'order'     =>  $i
+                ));
+            }
+        }else{
             Content::insert(array(
                 'type'      =>  'aboutus',
-                'content'   =>  $string[$i],
-                'order'     =>  $i
+                'content'   =>  Input::get('aboutus'),
             ));
         }
 
-//        Content::where('type', 'aboutus')->update(array(
-//            'content'   =>  Input::get('aboutus')
-//        ));
+        return Redirect::back()->with('aboutus', Content::where('type', 'aboutus')->orderBy('order','ASC')->get())->with('msg', 'About Us : Update successful');
+    }
 
-        return Redirect::back()->with('aboutus', Content::where('type', 'aboutus')->first())->with('msg', 'Update successful');
+    public function deleteAboutus(){
+        Content::where('type', 'aboutus')->delete();
+        return Redirect::back()->with('msg', 'About Us : Content has been deleted.');
+    }
+
+    public function general(){
+        return View::make('admin.general')->with('aboutus', Content::where('type', 'aboutus')->get())->with('slogans', Content::where('type', 'slogan')->get())->with('homeslogans', Content::where('type', 'homeslogan')->get());
+    }
+
+    public function updateSlogan(){
+        Content::where('type', 'slogan')->delete();
+        if(strlen(Input::get('slogan')) > 254){
+            $string = str_split(Input::get('slogan'), 254);
+            for($i = 0; $i < count($string); $i++){
+                Content::insert(array(
+                    'type'      =>  'slogan',
+                    'content'   =>  $string[$i],
+                    'order'     =>  $i
+                ));
+            }
+        }else{
+            Content::insert(array(
+                'type'      =>  'slogan',
+                'content'   =>  Input::get('slogan'),
+            ));
+        }
+
+        return Redirect::back()->with('aboutus', Content::where('type', 'aboutus')->orderBy('order','ASC')->get())
+                                ->with('slogans', Content::where('type', 'slogan')->orderBy('order', 'ASC')->get())
+                                ->with('homeslogans', Content::where('type', 'homeslogan')->orderBy('order', 'ASC')->get())
+                                ->with('msg', 'Slogan : Update successful');
+    }
+
+    public function updateHomeslogan(){
+        Content::where('type', 'homeslogan')->delete();
+        if(strlen(Input::get('homeslogan')) > 254){
+            $string = str_split(Input::get('homeslogan'), 254);
+            for($i = 0; $i < count($string); $i++){
+                Content::insert(array(
+                    'type'      =>  'homeslogan',
+                    'content'   =>  $string[$i],
+                    'order'     =>  $i
+                ));
+            }
+        }else{
+            Content::insert(array(
+                'type'      =>  'homeslogan',
+                'content'   =>  Input::get('homeslogan'),
+            ));
+        }
+
+        return Redirect::back()->with('aboutus', Content::where('type', 'aboutus')->orderBy('order','ASC')->get())
+            ->with('slogans', Content::where('type', 'slogan')->orderBy('order', 'ASC')->get())
+            ->with('homeslogans', Content::where('type', 'homeslogan')->orderBy('order', 'ASC')->get())
+            ->with('msg', 'Home Slogan : Update successful');
+    }
+
+    public function deleteSlogan(){
+        Content::where('type', 'slogan')->delete();
+        return Redirect::back()->with('msg', 'Slogan : Content has been deleted.');
+    }
+
+    public function deleteHomeslogan(){
+        Content::where('type', 'homeslogan')->delete();
+        return Redirect::back()->with('msg', 'Home Slogan : Content has been deleted.');
     }
 }

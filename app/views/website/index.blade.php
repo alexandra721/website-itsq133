@@ -18,6 +18,8 @@
     Some kind of product here
 </div>
 <div class="sub-tag">
-    {{ @$homeslogan->content }}
+    @foreach($homeslogans as $homeslogan)
+        {{ @$homeslogan->content }}
+    @endforeach
 </div>
 @stop
