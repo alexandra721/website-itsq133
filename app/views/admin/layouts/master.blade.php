@@ -10,11 +10,13 @@
     {{ HTML::style('css/custom.css') }}
     {{ HTML::style('font-awesome-4.2.0/css/font-awesome.min.css') }}
     {{ HTML::style('css/blueimp-gallery.min.css') }}
+    {{ HTML::style('css/jquery.cleditor.css') }}
 
     {{ HTML::script('js/jquery-1.11.0.min.js') }}
     {{ HTML::script('js/bootstrap.min.js') }}
     {{ HTML::script('js/custom.js') }}
     {{ HTML::script('js/blueimp-gallery.min.js') }}
+    {{ HTML::script('js/jquery.cleditor.min.js') }}
 
     <style>
         .thumbnail-custom {
@@ -107,8 +109,24 @@
 <!--                    <li class="active"><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>-->
                     <li><a href="/admin/home"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
                     <li><a href="/admin/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
-                    <li><a href="/admin/comments"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>
+<!--                    <li><a href="/admin/comments"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>-->
 <!--                    <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Posts</a></li>-->
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#dropdown-content">
+                            <span class="glyphicon glyphicon-th"></span> Content <span class="caret"></span>
+                        </a>
+                        <div id="dropdown-content" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/admin/comments"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>
+                                    <li><a href="/admin/aboutus"><span class="glyphicon glyphicon-heart"></span> About us</a></li>
+<!--                                    <li><a href="/admin/homeManage"><span class="glyphicon glyphicon-home"></span> Home</a></li>-->
+                                    <li><a href="/admin/contactus"><span class="glyphicon glyphicon-earphone"></span> Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
 
                     <!-- Dropdown-->
                     <li class="panel panel-default" id="dropdown">

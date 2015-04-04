@@ -77,11 +77,13 @@ body {
 }
 
 .about-content {
-    border-top-left-radius: 0.3em;
-    border-top-right-radius: 0.3em;
+    border-radius: 0.3em;
+    /*border-top-left-radius: 0.3em;*/
+    /*border-top-right-radius: 0.3em;*/
     background-color: rgba(221, 221, 221, 0.8);
     margin-top: 0em;
     padding: 0.7em;
     font-size: 1.2em;
     /*margin-bottom: 4em;*/
+    word-wrap: break-word;
 }

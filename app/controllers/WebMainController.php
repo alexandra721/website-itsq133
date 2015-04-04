@@ -2,7 +2,7 @@
 
 class WebMainController extends \BaseController {
     public function index(){
-        return View::make('website.index');
+        return View::make('website.index')->with('homeslogan', Content::where('type', 'homeslogan')->first());
     }
 
     public function gallery(){
@@ -10,7 +10,7 @@ class WebMainController extends \BaseController {
     }
 
     public function about(){
-        return View::make('website.about');
+        return View::make('website.about')->with('aboutus', Content::where('type', 'aboutus')->get());
     }
 
     public function contactus(){
@@ -18,11 +18,11 @@ class WebMainController extends \BaseController {
     }
 
     public function register(){
-        return View::make('website.register');
+        return View::make('website.register')->with('slogan', Content::where('type', 'slogan')->first());
     }
 
     public function login(){
-        return View::make('website.login');
+        return View::make('website.login')->with('slogan', Content::where('type', 'slogan')->first());
     }
 
     public function doRegister(){

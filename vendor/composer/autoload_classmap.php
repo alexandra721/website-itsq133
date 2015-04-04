@@ -32,6 +32,7 @@ return array(
     'Comment' => $baseDir . '/app/models/Comment.php',
     'CommentsTableSeeder' => $baseDir . '/app/database/seeds/CommentsTableSeeder.php',
     'CreateCommentsTable' => $baseDir . '/app/database/migrations/2015_03_25_105803_create_comments_table.php',
+    'CreateContentsTable' => $baseDir . '/app/database/migrations/2015_04_04_062727_create_contents_table.php',
     'CreateImagesTable' => $baseDir . '/app/database/migrations/2015_04_01_051523_create_images_table.php',
     'CreateUsersTable' => $baseDir . '/app/database/migrations/2015_03_25_054634_create_users_table.php',
     'CreateVideosTable' => $baseDir . '/app/database/migrations/2015_04_01_053423_create_videos_table.php',

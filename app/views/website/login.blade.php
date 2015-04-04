@@ -18,7 +18,9 @@
 @section('master-body')
 <div class="col-md-offset-4 col-md-4 website-login-panel panel-body">
     <div class="login-panel-header">
-        <h4>Insert slogan here</h4>
+        <h4>
+            {{ @$slogan->content }}
+        </h4>
     </div>
     <hr/>
     {{ Form::open(array('url' => '/doLogin', 'id' => 'login_form')) }}

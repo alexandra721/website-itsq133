@@ -113,4 +113,41 @@ class AdminController extends \BaseController {
         Session::flash('success', 'Upload success');
         return Redirect::to('/admin/images');
     }
+
+    public function aboutus(){
+        return View::make('admin.aboutus')->with('aboutus', Content::where('type', 'aboutus')->get());
+    }
+
+    public function homeManage(){
+        return View::make('admin.homeManage');
+    }
+
+    public function contactus(){
+        return View::make('admin.contactus');
+    }
+
+    public function updateAboutus(){
+        if(strlen(Input::get('aboutus')) > 254){
+//            $string = str_split(Input::get('aboutus'), 254);
+            $string = str_split(Input::get('aboutus'), 254);
+        }else{
+            $string = Input::get('aboutus');
+        }
+
+        Content::where('type', 'aboutus')->delete();
+
+        for($i = 0; $i < count($string); $i++){
+            Content::insert(array(
+                'type'      =>  'aboutus',
+                'content'   =>  $string[$i],
+                'order'     =>  $i
+            ));
+        }
+
+//        Content::where('type', 'aboutus')->update(array(
+//            'content'   =>  Input::get('aboutus')
+//        ));
+
+        return Redirect::back()->with('aboutus', Content::where('type', 'aboutus')->first())->with('msg', 'Update successful');
+    }
 }

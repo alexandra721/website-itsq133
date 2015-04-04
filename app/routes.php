@@ -55,6 +55,10 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/images', 'AdminController@images');
     Route::get('/admin/videos', 'AdminController@videos');
     Route::post('/admin/upload', 'AdminController@upload');
+    Route::get('/admin/aboutus', 'AdminController@aboutus');
+    Route::get('/admin/homeManage', 'AdminController@homeManage');
+    Route::get('/admin/contactus', 'AdminController@contactus');
+    Route::post('/admin/updateAboutus', 'AdminController@updateAboutus');
 });
 
 // ADMIN ROUTES -- END
