@@ -6,7 +6,9 @@ function websiteLogin(form, btn, div){
             'data'  :   form.serialize(),
             'success':  function(data){
                 if(data['msg'] == 'TRUE'){
-                    location.href = '/home';
+                    $('.success-div').empty().append('<i class="fa fa-check"></i> Registration Successfull. You will be redirected to the home page in 3 seconds..');
+                    setTimeout(function(){ location.href="/home"; }, 3000);
+//                    location.href = '/home';
                 }else{
                     div.empty().append(data['msg']);
                 }

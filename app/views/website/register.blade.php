@@ -41,8 +41,8 @@
                     {{ Form::text('username', Input::old('username'), array('class' => 'form-control margin-bottom-10 login-input', 'placeholder' => 'Enter your username name here')) }}
                     {{ Form::password('password', array('class' => 'form-control margin-bottom-10  login-input', 'placeholder' => 'Enter your password here')) }}
                     {{ Form::password('confirm-password', array('class' => 'form-control margin-bottom-10 login-input', 'placeholder' => 'Confirm password here')) }}
-                    <div class="col-md-8 error-div" style="color : #E74C3C; font-size: 0.95em;">
-                    </div>
+                    <div class="col-md-8 error-div" style="color : #E74C3C; font-size: 0.95em;"></div>
+                    <div class="col-md-8 success-div" style="color : #27AE60; font-size: 0.95em;"></div>
                     <div class="col-md-4" style="padding-right: 0em;">
                         {{ Form::button('Register', array('class' => 'btn btn-success pull-right register-btn', 'style' => 'margin-top : 1em;')) }}
                     </div>
