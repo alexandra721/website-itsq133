@@ -122,9 +122,9 @@
                                 <ul class="nav navbar-nav">
                                     <li><a href="/admin/general"><span class="glyphicon glyphicon-cog"></span> General</a></li>
                                     <li><a href="/admin/comments"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>
-                                    <li><a href="/admin/aboutus"><span class="glyphicon glyphicon-heart"></span> About us</a></li>
+<!--                                    <li><a href="/admin/aboutus"><span class="glyphicon glyphicon-heart"></span> About us</a></li>-->
 <!--                                    <li><a href="/admin/homeManage"><span class="glyphicon glyphicon-home"></span> Home</a></li>-->
-                                    <li><a href="/admin/contactus"><span class="glyphicon glyphicon-earphone"></span> Contact us</a></li>
+<!--                                    <li><a href="/admin/contactus"><span class="glyphicon glyphicon-earphone"></span> Contact us</a></li>-->
                                 </ul>
                             </div>
                         </div>

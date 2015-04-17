@@ -153,6 +153,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/preview/about.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/profile.blade.php">
           <value>
             <set />

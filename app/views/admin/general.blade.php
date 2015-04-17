@@ -46,6 +46,8 @@
         <hr/>
         <button type="submit" class="btn btn-success pull-right">Save</button>
         <button type="button" class="btn btn-danger pull-right" style="margin-right: 0.4em" data-toggle="modal" data-target="#confirmDelete">Delete All</button>
+<!--        <button type="button" class="btn btn-default pull-right" style="margin-right: 0.4em" onclick="location.href='/admin/preview/aboutus'">Preview</button>-->
+        <button type="button" class="btn btn-default pull-right" style="margin-right: 0.4em" onclick="window.open('/admin/preview/aboutus','Preview About Us page', 'scrollbars=yes,width=800px,height=600px');">Preview</button>
         {{ Form::close() }}
     </div>
     <div class="panel-footer"></div>

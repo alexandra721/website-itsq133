@@ -50,13 +50,18 @@ class WebMainController extends \BaseController {
         if($msg == 'TRUE'){
             User::insert(array(
                 'username'  =>  Input::get('username'),
-                'password'  =>  Hash::make('password'),
+                'password'  =>  Hash::make(Input::get('password')),
                 'email'     =>  Input::get('email'),
                 'firstname' =>  Input::get('firstname'),
                 'lastname'  =>  Input::get('lastname'),
                 'role'      =>  'USER',
                 'status'    =>  'ACTIVATED',
                 'profile_photo' =>  'NONE',
+            ));
+
+            Auth::attempt(array(
+                'username'  =>  Input::get('username'),
+                'password'  =>  Input::get('password')
             ));
         }
         return array(

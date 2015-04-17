@@ -213,4 +213,8 @@ class AdminController extends \BaseController {
         Content::where('type', 'homeslogan')->delete();
         return Redirect::back()->with('msg', 'Home Slogan : Content has been deleted.');
     }
+
+    public function previewAboutus(){
+        return View::make('website.about')->with('aboutus', Content::where('type', 'aboutus')->orderBy('order', 'ASC')->get());
+    }
 }
