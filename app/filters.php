@@ -68,7 +68,7 @@ Route::filter('DESTROY-USER', function(){
 
 Route::filter('ROUTE-PROTECT', function(){
     if(Auth::check()){
-        return Redirect::to('/login');
+        return Redirect::to('/');
     }
 });
 
