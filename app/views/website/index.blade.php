@@ -15,7 +15,7 @@
 
 @section('master-body')
 <div class="main-tag">
-    Some kind of product here
+    Welcome to the Philippines
 </div>
 <div class="sub-tag">
     @foreach($homeslogans as $homeslogan)
