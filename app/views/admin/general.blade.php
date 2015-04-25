@@ -2,15 +2,6 @@
 
 @section('master-head')
 <style>
-    .updatemsgDiv {
-        background-color: #CCFFE2;
-        border: solid 0.1em #7FFAB5;
-        border-radius: 0.3em;
-        padding: 0.8em;
-        margin-bottom: 0.7em;
-        color: #4CB57A;
-        padding-left: 1.5em;
-    }
 </style>
 <script>
     $(document).ready(function(){

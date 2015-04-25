@@ -2,7 +2,7 @@
 
 class WebMainController extends \BaseController {
     public function index(){
-        return View::make('website.index')->with('homeslogans', Content::where('type', 'homeslogan')->get());
+        return View::make('website.index')->with('homeslogans', Content::where('type', 'homeslogan')->get())->with('articles', Article::orderBy('id', 'DESC')->get());
     }
 
     public function gallery(){

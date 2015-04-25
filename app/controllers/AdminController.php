@@ -217,4 +217,140 @@ class AdminController extends \BaseController {
     public function previewAboutus(){
         return View::make('website.about')->with('aboutus', Content::where('type', 'aboutus')->orderBy('order', 'ASC')->get());
     }
+
+    public function promotions(){
+//        return View::make('admin.promotions')->with('locations', Location::join('articles', 'locations.id', '=', 'articles.location_id')->get())->with('locationCount', Location::all()->count());
+        return View::make('admin.promotions')->with('locations', Location::all())->with('locationCount', Location::all()->count());
+    }
+
+    public function addLocation(){
+//        dd(strlen(trim(Input::get('locationDescription'))));
+        if(strlen(trim(Input::get('locationName'))) == 0){
+            return Redirect::back()->with('errorMsg', 'Location name must be filled out');
+        }else if(strlen(trim(Input::get('locationDescription'))) == 0){
+            return Redirect::back()->with('errorMsg', 'Location description must be filled out');
+        }else{
+            Location::insert(array(
+                'name'  =>  strip_tags(Input::get('locationName')),
+                'description'   =>  strip_tags(Input::get('locationDescription'))
+            ));
+            return Redirect::back()->with('successMsg', 'Location has been saved');
+        }
+    }
+
+    public function editLocation(){
+        $bool = 'FALSE';
+        if(Input::get('locationName') == null || Input::get('locationDescription') == null){
+            $msg = 'Location name and description cannot be empty';
+        }else if(strlen(strip_tags(trim(Input::get('locationName')))) == 0 || strlen(strip_tags(trim(Input::get('locationDescription')))) == 0){
+            $msg = 'Location name and description cannot be empty';
+        }else{
+            Location::where('id', Input::get('locationId'))->update(array(
+                'name'  =>  strip_tags(trim(Input::get('locationName'))),
+                'description'  =>  strip_tags(trim(Input::get('locationDescription'))),
+            ));
+            $bool = 'TRUE';
+            $msg = 'Location details have been updated';
+        }
+
+        return array(
+            'msg'   =>  $msg,
+            'bool'  =>  $bool
+        );
+    }
+
+    public function article($id){
+        return View::make('admin.articles')->with('articles', Article::where('location_id', $id)->get())->with('location', Location::where('id', $id)->first());
+    }
+
+    public function addArticle(){
+        $bool = false;
+        if(Input::get('articleContent') == null || Input::get('articleTitle') == null){
+            $msg = 'Article title and content cannot be empty';
+        }else if(strlen(strip_tags(trim(Input::get('articleContent')))) == 0 || strlen(strip_tags(trim(Input::get('articleTitle')))) == 0){
+            $msg = 'Article title and content cannot be empty';
+        }else{
+            Article::insert(array(
+                'location_id'   =>  Input::get('locId'),
+                'title'         =>  Input::get('articleTitle')
+            ));
+
+            $articleId = Article::where('location_id', Input::get('locId'))->where('title', Input::get('articleTitle'))->pluck('id');
+
+            if(strlen(Input::get('articleContent')) > 255){
+                $string = str_split(Input::get('articleContent'), 255);
+                for($i = 0; $i < count($string); $i++){
+                    ArticleContent::insert(array(
+                        'article_id'    =>  $articleId,
+                        'content'       =>  $string[$i],
+                        'order'     =>  $i
+                    ));
+                }
+            }else{
+                ArticleContent::insert(array(
+                    'article_id'    =>  $articleId,
+                    'content'       =>  Input::get('articleContent')
+                ));
+            }
+
+            $bool = true;
+            $msg = 'Article is successfully created';
+        }
+
+        if($bool){
+            return Redirect::back()->with('successMsg', $msg);
+        }else{
+            return Redirect::back()->with('errorMsg', $msg);
+        }
+    }
+
+    public function deleteLocation($id){
+        Location::where('id', $id)->delete();
+        $articleQuery = Article::where('location_id', $id);
+        $articleId = $articleQuery->pluck('id');
+        $articleQuery->delete();
+        ArticleContent::where('article_id', $articleId)->delete();
+
+        return Redirect::to('/admin/promotions')->with('successMsg', 'Location has been successfully deleted');
+    }
+
+    public function editArticle(){
+        $bool = 'FALSE';
+        if(Input::get('articleTitle') == null || Input::get('articleContent') == null){
+            $msg = 'Article title and content cannot be empty';
+        }else if(strlen(strip_tags(trim(Input::get('articleTitle')))) == 0 || strlen(strip_tags(trim(Input::get('articleContent')))) == 0){
+            $msg = 'Article title and content cannot be empty';
+        }else{
+            Article::where('id', Input::get('articleId'))->update(array(
+                'title'  =>  strip_tags(trim(Input::get('articleTitle'))),
+            ));
+
+            $ArtContQuery = ArticleContent::where('article_id', Input::get('articleId'));
+            $ArtContQuery->delete();
+
+            if(strlen(Input::get('articleContent')) > 255){
+                $string = str_split(Input::get('articleContent'), 255);
+                for($i = 0; $i < count($string); $i++){
+                    ArticleContent::insert(array(
+                        'article_id'    =>  Input::get('articleId'),
+                        'content'       =>  $string[$i],
+                        'order'     =>  $i
+                    ));
+                }
+            }else{
+                ArticleContent::insert(array(
+                    'article_id'    =>  Input::get('articleId'),
+                    'content'       =>  Input::get('articleContent')
+                ));
+            }
+
+            $bool = 'TRUE';
+            $msg = 'Article details have been updated';
+        }
+
+        return array(
+            'msg'   =>  $msg,
+            'bool'  =>  $bool
+        );
+    }
 }

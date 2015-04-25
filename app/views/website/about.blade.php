@@ -14,7 +14,7 @@
 
 @section('master-body')
 <h2 class="col-md-offset-1 about-header"><i class="fa fa-heart" style="color: #E74C3C"></i> About us</h2>
-<div class="about-content col-md-offset-1 col-md-10 panel-body">
+<div class="about-content col-md-offset-1 col-md-10 panel-body" style="text-align: justify;">
     @foreach($aboutus as $about)
         {{ $about->content }}
     @endforeach

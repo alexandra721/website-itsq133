@@ -53,6 +53,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/database/migrations/2015_04_25_033110_create_articles_table.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/database/migrations/2015_04_25_033224_create_locations_table.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/database/migrations/2015_04_25_062341_create_articlecontents_table.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/database/seeds/CommentsTableSeeder.php">
           <value>
             <set />
@@ -78,6 +93,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/models/Article.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/ArticleContent.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/models/Comment.php">
           <value>
             <set />
@@ -89,6 +114,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/models/Image.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/Location.php">
           <value>
             <set />
           </value>
@@ -109,6 +139,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/aboutus.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/articles.blade.php">
           <value>
             <set />
           </value>
@@ -159,6 +194,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/profile.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/promotions.blade.php">
           <value>
             <set />
           </value>

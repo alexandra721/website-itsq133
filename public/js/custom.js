@@ -91,3 +91,66 @@ function submitChangepass(form, btn, div){
         })
     });
 }
+
+function promotionsPage(){
+    $('#imageUpload').change(function(){
+        $('.files-names-div').hide();
+        var inputFile = document.getElementById('imageUpload');
+        for(var i = 0; i < inputFile.files.length; i++){
+            $('.file-names').append('<br/>'+inputFile.files[i].name);
+        }
+        $('.files-names-div').show();
+    });
+
+    $('.cancel-modal').click(function(){
+        $('.addLocationInput').val('');
+    });
+
+    $('.editInfo').click(function(){
+        var id = $(this).attr('data-locid');
+        $('#origName_'+id).hide();
+        $('#origDesc_'+id).hide();
+        $('#name_'+id).show();
+        $('#desc_'+id).show();
+        $('.btnSet1_'+id).hide();
+        $('.btnSet2_'+id).show();
+    });
+
+    $('.cancelEdit').click(function(){
+        var id = $(this).attr('data-locid');
+        $('#origName_'+id).show();
+        $('#origDesc_'+id).show();
+        $('#name_'+id).hide();
+        $('#desc_'+id).hide();
+        $('.btnSet1_'+id).show();
+        $('.btnSet2_'+id).hide();
+    });
+
+    $('.saveEdit').click(function(){
+        var id = $(this).attr('data-locid'),
+            form = $('#form_'+id),
+            newName = $('#name_'+id).val(),
+            newDesc = $('#textareaDesc_'+id).val();
+
+        $.ajax({
+            url     :   form.attr('action'),
+            type    :   form.attr('method'),
+            data    :   form.serialize(),
+            success :   function(data){
+                if(data['bool'] == 'FALSE'){
+                    alert(data['msg']);
+                }else{
+                    alert(data['msg']);
+                    $('#origName_'+id).empty().append(newName).show();
+                    $('#origDesc_'+id).empty().append(newDesc).show();
+                    $('#name_'+id).hide();
+                    $('#desc_'+id).hide();
+                    $('.btnSet1_'+id).show();
+                    $('.btnSet2_'+id).hide();
+                }
+            },error :   function(){
+                alert('Please check network connectivity');
+            }
+        })
+    })
+}

@@ -65,6 +65,13 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/deleteAboutus', 'AdminController@deleteAboutus');
     Route::get('/admin/deleteSlogan', 'AdminController@deleteSlogan');
     Route::get('/admin/deleteHomeslogan', 'AdminController@deleteHomeslogan');
+    Route::get('/admin/promotions', 'AdminController@promotions');
+    Route::post('/admin/addLocation', 'AdminController@addLocation');
+    Route::post('/admin/editLocation', 'AdminController@editLocation');
+    Route::get('/admin/article/{id}', 'AdminController@article');
+    Route::post('/admin/addArticle', 'AdminController@addArticle');
+    Route::get('/admin/deleteLocation/{id}', 'AdminController@deleteLocation');
+    Route::post('/admin/editArticle', 'AdminController@editArticle');
 });
 
 // ADMIN ROUTES -- END
