@@ -22,7 +22,6 @@ function websiteLogin(form, btn, div){
 function scripts_HomePage(){
     setInterval(function(){
         var randNum = randomIntFromInterval(2,12);
-        console.log('/images/body/'+randNum);
         $('body').css('background-image','url("/images/body/'+randNum+'.jpg")');
     }, 5000);
 

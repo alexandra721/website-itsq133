@@ -46,7 +46,7 @@ Route::group(array('before' => 'DESTROY-USER'), function(){
 });
 
 Route::group(array('before' => 'ADMIN'), function(){
-    Route::get('/admin/home', 'AdminController@home');
+    Route::get('/admin/home', 'AdminController@promotions');
     Route::get('/admin/users', 'AdminController@users');
     Route::get('/admin/deactivate/{id}', 'AdminController@deactivate');
     Route::get('/admin/activate/{id}', 'AdminController@activate');

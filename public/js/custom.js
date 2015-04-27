@@ -173,15 +173,6 @@ function scripts_Promotions(){
             alert('Please choose files first.');
         }
     });
-
-    $('#imageUpload').change(function(){
-        $('.files-names-div').hide();
-        var inputFile = document.getElementById('imageUpload');
-        for(var i = 0; i < inputFile.files.length; i++){
-            $('.file-names').append('<br/>'+inputFile.files[i].name);
-        }
-        $('.files-names-div').show();
-    });
 }
 
 function scripts_Article(){

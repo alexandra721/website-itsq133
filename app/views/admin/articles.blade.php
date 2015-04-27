@@ -19,7 +19,7 @@
     }
 </style>
 <script>
-    $(document).ready(function(){ scripts_Articles(); })
+    $(document).ready(function(){ scripts_Article(); })
 </script>
 @stop
 
