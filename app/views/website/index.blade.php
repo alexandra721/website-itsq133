@@ -26,24 +26,24 @@
         }, 5000);
 
         $('.article-trigger').click(function(){
+            $('.body1').show();
+            $('.body2').hide();
             var ArtUrl = '/getArticle/'+$(this).attr('data-artid'),
                 artId = $(this).attr('data-artid');
             $.ajax({
                 type    :   'GET',
                 url     :   ArtUrl,
                 success :   function(data){
-////                    alert(location.hostname+''+data['image']);
-//                    var image = new Image();
-//                    image.src = location.hostname+'/'+data['image'];
-//                    image.onload = function(){
-//                      $('.articleModal-img').empty().append(image);
-//                    };
-
                     $('.articleModal-header').empty().append('<center><font style="font-size : 1.8em">'+ data['title'] +'</font></center>');
                     $('.articleModal-body').empty().append($('.article_'+artId).text());
 
                     var img = $('.image_'+artId).clone();
                     $('.articleModal-img').empty().append(img);
+
+                    setTimeout(function(){
+                        $('.body1').hide();
+                        $('.body2').fadeIn();
+                    }, 1000);
 
                 },error :   function(){
                     alert('Please check network connectivity');
@@ -94,17 +94,25 @@
 <div class="modal fade" id="articleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header articleModal-header">
-
+            <div class="body1" style="text-align: center; padding: 2em;">
+                <i class="fa fa-circle-o-notch fa-spin" style="color: #BDC3C7; font-size: 3em;"></i><br/>
+                <div style="padding: 0.9em">
+                    Loading article. Please wait.
+                </div>
             </div>
-            <div class="modal-body">
-                <div class="thumbnail2 articleModal-img">
+            <div class="body2" style="display: none;">
+                <div class="modal-header articleModal-header">
 
                 </div>
-                <div class="articleModal-body"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal-body">
+
+
+                        <div class="thumbnail2 articleModal-img"></div>
+                        <div class="articleModal-body"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
