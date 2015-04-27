@@ -108,11 +108,11 @@ class AdminController extends \BaseController {
             }
         }else{
             Session::flash('error', 'Please choose an image to upload before submitting');
-            return Redirect::to('/admin/images');
+            return Redirect::back();
         }
         // flash message to show success.
         Session::flash('success', 'Upload success');
-        return Redirect::to('/admin/images');
+        return Redirect::back();
     }
 
     public function aboutus(){
@@ -374,6 +374,10 @@ class AdminController extends \BaseController {
                         'title'     =>  $filename,
                         'description'   =>  'Enter new description',
                         'article_id'   =>  $id
+                    ));
+
+                    Article::where('id', $id)->update(array(
+                        'image' =>  '/upload/'.$filename,
                     ));
                 }
                 else {

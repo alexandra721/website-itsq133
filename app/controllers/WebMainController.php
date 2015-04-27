@@ -2,7 +2,7 @@
 
 class WebMainController extends \BaseController {
     public function index(){
-        return View::make('website.index')->with('homeslogans', Content::where('type', 'homeslogan')->get())->with('articles', Article::orderBy('id', 'DESC')->get());
+        return View::make('website.index')->with('homeslogans', Content::where('type', 'homeslogan')->get())->with('articles', Article::orderBy(DB::raw('RAND()'))->get());
     }
 
     public function gallery(){
@@ -90,5 +90,9 @@ class WebMainController extends \BaseController {
         }else{
             return Redirect::back()->with('msg', '<i class="fa fa-warning"></i> Invalid login credentials');
         }
+    }
+
+    public function getArticle($id){
+        return Article::where('id', $id)->first();
     }
 }

@@ -108,9 +108,9 @@
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
 <!--                    <li class="active"><a href="#"><span class="glyphicon glyphicon-plane"></span> Active Link</a></li>-->
-                    <li><a href="/admin/home"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
-                    <li><a href="/admin/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+<!--                    <li><a href="/admin/home"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>-->
                     <li><a href="/admin/promotions"><span class="glyphicon glyphicon-flag"></span> Promotions</a></li>
+                    <li><a href="/admin/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
 <!--                    <li><a href="/admin/comments"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>-->
 <!--                    <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Posts</a></li>-->
                     <li class="panel panel-default" id="dropdown">
@@ -163,7 +163,7 @@
                     </li>
 
                     <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Reports</a></li>
-                    <li><a href="/admin/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <li><a href="/admin/logout"><span class="glyphicon glyphicon-log-out" style="color: firebrick;"></span> Logout</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

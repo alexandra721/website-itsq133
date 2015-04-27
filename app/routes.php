@@ -27,6 +27,7 @@ Route::group(array('before' => 'DESTROY-ADMIN'), function(){
     Route::get('/doLogout', 'WebMainController@doLogout');
     Route::post('/doLogin', 'WebMainController@doLogin');
     Route::post('/doRegister', 'WebMainController@doRegister');
+    Route::get('/getArticle/{id}', 'WebMainController@getArticle');
 });
 
 Route::group(array('before' => 'ROUTE-PROTECT'), function(){
