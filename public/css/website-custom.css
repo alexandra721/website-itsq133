@@ -45,7 +45,6 @@
 }
 
 .article-div {
-    border-top: solid 0.1em #BDC3C7;
     width: 100%;
     background-color: white;
     /*padding: 3em;*/
@@ -56,6 +55,9 @@
     padding: 1em;
     /*padding-top: 0.6em;*/
     /*padding-bottom: 0.6em;*/
+    -webkit-box-shadow: -1px -1px 8px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px -1px 8px 1px rgba(0,0,0,0.75);
+    box-shadow: -1px -1px 8px 1px rgba(0,0,0,0.75);
 }
 
 .article-panel {

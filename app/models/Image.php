@@ -21,5 +21,7 @@
          *
          * @var array
          */
-
+        public function location(){
+            return $this->belongsTo('Location');
+        }
     }

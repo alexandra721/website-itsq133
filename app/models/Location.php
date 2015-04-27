@@ -11,4 +11,8 @@ class Location extends Eloquent {
     public function articles(){
         return $this->hasMany('Location');
     }
+
+    public function images(){
+        return $this->hasMany('Image');
+    }
 }

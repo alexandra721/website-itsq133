@@ -1,8 +1,56 @@
 @extends('admin.layouts.master')
 
 @section('master-head')
+<style>
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+</style>
 <script>
     $(document).ready(function(){
+        $('.links').click(function(){
+            event = event || window.event;
+            var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = {index: link, event: event},
+                links = this.getElementsByTagName('a');
+            blueimp.Gallery(links, options);
+        })
+
+        $('.upload-modal-btn').click(function(){
+            if(document.getElementById('imageUpload').files.length != 0){
+                $('#imgUpload').submit()
+            }else{
+                alert('Please choose files first.');
+            }
+        });
+
+        $('#imageUpload').change(function(){
+            $('.files-names-div').hide();
+            var inputFile = document.getElementById('imageUpload');
+            for(var i = 0; i < inputFile.files.length; i++){
+                $('.file-names').append('<br/>'+inputFile.files[i].name);
+            }
+            $('.files-names-div').show();
+        });
+
+        $('.uploadBtn').click(function(){
+            $('#imgUpload').attr('action', '/admin/uploadArticleImage/'+$(this).attr('data-artid'));
+            $('#uploadModal').modal('show');
+        });
+
         $("#textarea-article").cleditor();
 
         $('.editArticle').click(function(){
@@ -111,10 +159,19 @@
                             </textarea>
                         </div>
                     </div>
+                    <div class="well" style="margin: 0; margin-top: 1em; padding: 0.4em;">
+                        <div class="links">
+                            @foreach(Image::where('article_id', $article->id)->get() as $image)
+                                <a href="{{ $image->path }}" title="{{ $article->title }}">
+                                    <img src="{{ $image->path }}" height="100em" width="100em" alt="{{ $article->title }}" style="border-radius: 0.3em; border: solid 0.1em #BDC3C7">
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-footer" style="border: solid 0.1em #BDC3C7">
                     <div class="btn-group btnSet1_{{ $article->id }}" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-upload"></i> Upload Image</button>
+                        <button type="button" class="btn btn-default uploadBtn" data-artid="{{ $article->id }}"><i class="glyphicon glyphicon-upload"></i> Upload Image</button>
                         <button type="button" class="btn btn-default editArticle" data-artid="{{ $article->id }}"><i class="glyphicon glyphicon-edit"></i> Edit Article</button>
                         <button type="button" class="btn btn-danger" data-artid="{{ $article->id }}"><i class="glyphicon glyphicon-remove-circle"></i> Delete</button>
                     </div>
@@ -151,4 +208,42 @@
     </div>
 </div>
 {{ Form::close() }}
+
+{{ Form::open(array('url' => '/admin/uploadArticleImage', 'class' => 'form-horizontal', 'files' => 'true', 'id' => 'imgUpload')) }}
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-upload" style="color: #9B59B6"></i> Upload Image</h4>
+            </div>
+            <div class="modal-body upload-modal-body">
+                    <span class="btn btn-primary btn-file btn-block">
+                        Browse image
+                        <input type="file" name="imageUpload[]" accept='image/*' multiple id="imageUpload" style="color:transparent;" onchange="this.style.color = 'black';" />
+                    </span>
+
+                <div class="well file-names-div" style="margin-top: 0.6em; overflow-wrap: break-word">
+                    Files to be uploaded :
+                    <div class="file-names" style="color: #16A085"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="location.href=''">Cancel</button>
+                <button type="button" class="btn btn-success upload-modal-btn">Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{ Form::close() }}
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
 @stop

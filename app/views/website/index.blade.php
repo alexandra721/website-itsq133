@@ -9,6 +9,12 @@
         -o-background-size: cover;
         background-size: cover;
         overflow: hidden;
+
+        /*transition : 1s;*/
+        /*-webkit-transition: opacity 3s ease-in-out;*/
+        /*-moz-transition: opacity 3s ease-in-out;*/
+        /*-ms-transition: opacity 3s ease-in-out;*/
+        /*-o-transition: opacity 3s ease-in-out;*/
     }
 </style>
 <script>

@@ -6,7 +6,7 @@ class WebMainController extends \BaseController {
     }
 
     public function gallery(){
-        return View::make('website.gallery')->with('images', Image::all());
+        return View::make('website.gallery')->with('locations', Location::all());
     }
 
     public function about(){

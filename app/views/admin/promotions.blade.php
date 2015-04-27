@@ -25,6 +25,28 @@
 
 <script>
     $(document).ready(function(){
+        $('.uploadBtn').click(function(){
+            $('#imgUpload').attr('action', '/admin/upload/'+$(this).attr('data-locid'));
+            $('#uploadModal').modal('show');
+        });
+
+        $('.upload-modal-btn').click(function(){
+            if(document.getElementById('imageUpload').files.length != 0){
+                $('#imgUpload').submit()
+            }else{
+                alert('Please choose files first.');
+            }
+        });
+
+        $('#imageUpload').change(function(){
+            $('.files-names-div').hide();
+            var inputFile = document.getElementById('imageUpload');
+            for(var i = 0; i < inputFile.files.length; i++){
+                $('.file-names').append('<br/>'+inputFile.files[i].name);
+            }
+            $('.files-names-div').show();
+        });
+
         promotionsPage();
 
         $('.deleteLocation').click(function(){
@@ -32,6 +54,15 @@
             $('.deleteLocationModal-body').empty().append('Are you sure you want to delete '+name+'?<br/> All associated articles, videos and images will be also deleted');
             $('.deleteBtnModal').attr('href', '/admin/deleteLocation/'+$(this).attr('data-locid'));
             $('#deleteLocationModal').modal().show();
+        })
+
+        $('.links').click(function(){
+            event = event || window.event;
+            var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = {index: link, event: event},
+                links = this.getElementsByTagName('a');
+            blueimp.Gallery(links, options);
         })
     })
 </script>
@@ -79,11 +110,20 @@
                             <font color="red"><i class="fa fa-warning"></i><i> Description has 255 character limit</font></i>
                         </div>
                     </div>
+                    <div class="well" style="margin: 0; margin-top: 1em; padding: 0.4em;">
+                        <div class="links">
+                            @foreach(Image::where('location_id', $location->id)->get() as $image)
+                                <a href="{{ $image->path }}" title="{{ $location->name }}">
+                                    <img src="{{ $image->path }}" height="100em" width="100em" alt="{{ $location->name }}" style="border-radius: 0.3em; border: solid 0.1em #BDC3C7">
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-footer" style="border: solid 0.1em #BDC3C7">
                     <div class="btn-group btnSet1_{{ $location->id }}" role="group" aria-label="...">
                         <button type="button" class="btn btn-default" onclick="location.href='/admin/article/{{ $location->id }}'"><i class="glyphicon glyphicon-paperclip"></i> Articles</button>
-                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-upload"></i> Upload Image</button>
+                        <button type="button" class="btn btn-default uploadBtn" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Upload Image</button>
                         <button type="button" class="btn btn-default editInfo" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-edit"></i> Edit Info</button>
                         <button type="button" class="btn btn-danger deleteLocation" data-locid="{{ $location->id }}" data-locname="{{ $location->name }}"><i class="glyphicon glyphicon-remove-circle"></i> Delete</button>
                     </div>
@@ -137,5 +177,43 @@
             </div>
         </div>
     </div>
+</div>
+
+{{ Form::open(array('url' => '/admin/upload', 'class' => 'form-horizontal', 'files' => 'true', 'id' => 'imgUpload')) }}
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-upload" style="color: #9B59B6"></i> Upload Image</h4>
+            </div>
+            <div class="modal-body upload-modal-body">
+                    <span class="btn btn-primary btn-file btn-block">
+                        Browse image
+                        <input type="file" name="imageUpload[]" accept='image/*' multiple id="imageUpload" style="color:transparent;" onchange="this.style.color = 'black';" />
+                    </span>
+
+                <div class="well file-names-div" style="margin-top: 0.6em; overflow-wrap: break-word">
+                    Files to be uploaded :
+                    <div class="file-names" style="color: #16A085"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="location.href=''">Cancel</button>
+                <button type="button" class="btn btn-success upload-modal-btn">Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{ Form::close() }}
+
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title">TAE</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
 </div>
 @stop

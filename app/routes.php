@@ -54,7 +54,7 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/comments', 'AdminController@comments');
     Route::get('/admin/images', 'AdminController@images');
     Route::get('/admin/videos', 'AdminController@videos');
-    Route::post('/admin/upload', 'AdminController@upload');
+    Route::post('/admin/upload/{id}', 'AdminController@upload');
     Route::get('/admin/general', 'AdminController@general');
     Route::get('/admin/preview/aboutus', 'AdminController@previewAboutus');
     Route::get('/admin/homeManage', 'AdminController@homeManage');
@@ -72,6 +72,7 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::post('/admin/addArticle', 'AdminController@addArticle');
     Route::get('/admin/deleteLocation/{id}', 'AdminController@deleteLocation');
     Route::post('/admin/editArticle', 'AdminController@editArticle');
+    Route::post('/admin/uploadArticleImage/{id}', 'AdminController@uploadArticleImage');
 });
 
 // ADMIN ROUTES -- END

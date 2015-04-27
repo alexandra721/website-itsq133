@@ -72,14 +72,14 @@ class AdminController extends \BaseController {
     }
 
     public function images(){
-        return View::make('admin.images')->with('images', Image::all());
+        return View::make('admin.images')->with('images', Image::all())->with('locations', Location::orderBy('name', 'ASC')->get());
     }
 
     public function videos(){
         return View::make('admin.videos')->with('videos', Image::all());
     }
 
-    public function upload(){
+    public function upload($id){
         $files = Input::file('imageUpload');
         if(isset($files)){
             foreach($files as $file) {
@@ -97,6 +97,7 @@ class AdminController extends \BaseController {
                         'path'      =>  '/upload/'.$filename,
                         'title'     =>  $filename,
                         'description'   =>  'Enter new description',
+                        'location_id'   =>  $id
                     ));
                 }
                 else {
@@ -352,5 +353,41 @@ class AdminController extends \BaseController {
             'msg'   =>  $msg,
             'bool'  =>  $bool
         );
+    }
+
+    public function uploadArticleImage($id){
+        $files = Input::file('imageUpload');
+        if(isset($files)){
+            foreach($files as $file) {
+                // validating each file.
+                $rules = array('file' => 'required|mimes:png,jpeg,jpg'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+                $validator = Validator::make(array('file'=> $file), $rules);
+                if($validator->passes()){
+                    // path is root/uploads
+                    $destinationPath = 'public/upload';
+                    $filename = $file->getClientOriginalName();
+                    $upload_success = $file->move($destinationPath, $filename);
+                    // insert table the details
+                    Image::insert(array(
+                        'user_id'   =>  Auth::user()->id,
+                        'path'      =>  '/upload/'.$filename,
+                        'title'     =>  $filename,
+                        'description'   =>  'Enter new description',
+                        'article_id'   =>  $id
+                    ));
+                }
+                else {
+                    // redirect back with errors.
+                    Session::flash('error', $validator);
+                    return Redirect::to('/admin/images');
+                }
+            }
+        }else{
+            Session::flash('error', 'Please choose an image to upload before submitting');
+            return Redirect::to('/admin/images');
+        }
+        // flash message to show success.
+        Session::flash('success', 'Upload success');
+        return Redirect::back()->with('successMsg', 'Upload is successful');
     }
 }
