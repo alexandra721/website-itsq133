@@ -4,11 +4,7 @@
 <style>
 </style>
 <script>
-    $(document).ready(function(){
-        $("#txtarea-aboutus").cleditor();
-        $("#txtarea-slogan").cleditor();
-        $("#txtarea-homeslogan").cleditor();
-    });
+    $(document).ready(function(){ scripts_General() });
 </script>
 @stop
 

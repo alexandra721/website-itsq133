@@ -3,69 +3,26 @@
 @section('master-head')
 <style>
     body {
-        background: url('/images/body/12.jpg') no-repeat center center fixed;
+        background: url('/images/body/11.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         overflow: hidden;
-
-        /*transition : 1s;*/
-        /*-webkit-transition: opacity 3s ease-in-out;*/
-        /*-moz-transition: opacity 3s ease-in-out;*/
-        /*-ms-transition: opacity 3s ease-in-out;*/
-        /*-o-transition: opacity 3s ease-in-out;*/
     }
 </style>
 <script>
     $(document).ready(function(){
-        setInterval(function(){
-            var randNum = randomIntFromInterval(1,12);
-            console.log('/images/body/'+randNum);
-            $('body').css('background-image','url("/images/body/'+randNum+'.jpg")');
-        }, 5000);
-
-        $('.article-trigger').click(function(){
-            $('.body1').show();
-            $('.body2').hide();
-            var ArtUrl = '/getArticle/'+$(this).attr('data-artid'),
-                artId = $(this).attr('data-artid');
-            $.ajax({
-                type    :   'GET',
-                url     :   ArtUrl,
-                success :   function(data){
-                    $('.articleModal-header').empty().append('<center><font style="font-size : 1.8em">'+ data['title'] +'</font></center>');
-                    $('.articleModal-body').empty().append($('.article_'+artId).text());
-
-                    var img = $('.image_'+artId).clone();
-                    $('.articleModal-img').empty().append(img);
-
-                    setTimeout(function(){
-                        $('.body1').hide();
-                        $('.body2').fadeIn();
-                    }, 1000);
-
-                },error :   function(){
-                    alert('Please check network connectivity');
-                }
-            });
-
-            $('#articleModal').modal('show');
-        })
+        scripts_HomePage();
     });
-
-    function randomIntFromInterval(min,max)
-    {
-        return Math.floor(Math.random()*(max-min+1)+min);
-    }
 </script>
 @stop
 
 @section('master-body')
-<div class="main-tag">
+<div class="main-tag" style="display: none;">
     Welcome to the Philippines
 </div>
-<div class="sub-tag">
+<div class="sub-tag" style="display: none;">
     @foreach($homeslogans as $homeslogan)
         {{ @$homeslogan->content }}
     @endforeach
@@ -78,7 +35,7 @@
 <!--                    <img src="/images/VIS-BORA/1.jpg" alt="Image" class="article-trigger" data-artid="{{ $article->id }}"/>-->
                     <img src="{{ $article->image }}" alt="Image" class="article-trigger image_{{ $article->id }}" data-artid="{{ $article->id }}"/>
                 </div>
-                <div class="article-headline article-trigger" data-artid="{{ $article->id }}">
+                <div class="article-headline article-trigger title_{{ $article->id }}" data-artid="{{ $article->id }}">
                     {{ $article->title }}
                 </div>
                 <div class="article-text article_{{ $article->id }}">

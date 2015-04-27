@@ -2,21 +2,7 @@
 
 @section('master-head')
 <script>
-    $(document).ready(function(){
-        $('.a-acti').click(function(){
-            $('.confirm-acti-modal').attr('href', $(this).attr('data-href'));
-            var info = 'Confirm account activation for <font color="red">'+$('.first_'+$(this).attr('id')).text()+' '+$('.last_'+$(this).attr('id')).text()+'</font>';
-            $('.modal-body-acti').empty().append(info);
-            $('#actiModal').modal().show();
-        });
-
-        $('.a-deac').click(function(){
-            $('.confirm-deac-modal').attr('href', $(this).attr('data-href'));
-            var info = 'Confirm account deactivation for <font color="red">'+$('.first_'+$(this).attr('id')).text()+' '+$('.last_'+$(this).attr('id')).text()+'</font>';
-            $('.modal-body-deac').empty().append(info);
-            $('#deacModal').modal().show();
-        });
-    })
+    $(document).ready(function(){ scripts_Users(); })
 </script>
 @stop
 

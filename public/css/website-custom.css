@@ -17,6 +17,7 @@
 
 .article-text {
     display: inline;
+    color: #BDC3C7;
 }
 
 .thumbnail {
@@ -79,14 +80,16 @@
 
 .article-div {
     width: 100%;
-    background-color: white;
+    /*background-color: white;*/
+    background-color: #34495E;
+    color: #ffffff;
     /*padding: 3em;*/
     bottom: 0em;
     left: 0;
     position: fixed;
-    height: 17em;
+    height: 15em;
     padding: 1em;
-    /*padding-top: 0.6em;*/
+    padding-top: 0.5em;
     /*padding-bottom: 0.6em;*/
     -webkit-box-shadow: -1px -1px 8px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px -1px 8px 1px rgba(0,0,0,0.75);
@@ -122,6 +125,9 @@ body {
     margin-left: 0.3em;
     transition : 0.5s;
     /*background-color: #BDC3C7;*/
+    -webkit-box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.75);
 }
 
 .website-nav-btn:hover {

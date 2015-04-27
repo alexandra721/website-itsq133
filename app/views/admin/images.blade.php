@@ -24,34 +24,7 @@
 </style>
 
 <script>
-    $(document).ready(function(){
-        $('.uploadBtn').click(function(){
-            $('#imgUpload').attr('action', '/admin/upload/'+$(this).attr('data-locid'));
-            $('#uploadModal').modal('show');
-        });
-
-        $('.upload-modal-btn').click(function(){
-            if(document.getElementById('imageUpload').files.length != 0){
-                $('#imgUpload').submit()
-            }else{
-                alert('Please choose files first.');
-            }
-        });
-
-        $('#imageUpload').change(function(){
-            $('.files-names-div').hide();
-            var inputFile = document.getElementById('imageUpload');
-            for(var i = 0; i < inputFile.files.length; i++){
-                $('.file-names').append('<br/>'+inputFile.files[i].name);
-            }
-            $('.files-names-div').show();
-        });
-
-//        document.getElementById('links').onclick = function (event) {
-//
-//        };
-
-    })
+    $(document).ready(function(){ scripts_Images(); })
 </script>
 @stop
 
@@ -70,15 +43,7 @@
     {{ Session::get('success') }}
 </div>
 @endif
-<div id="blueimp-gallery" class="blueimp-gallery">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-</div>
+
 @foreach($locations as $location)
     <div class="panel panel-primary">
         <div class="panel-heading">

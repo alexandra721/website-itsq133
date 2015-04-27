@@ -11,8 +11,6 @@
         vertical-align: 0; !important;
     }
 </style>
-<script>
-</script>
 @stop
 
 @section('master-body')

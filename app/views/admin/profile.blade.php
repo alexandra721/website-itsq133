@@ -13,9 +13,7 @@
 </style>
 <script>
     $(document).ready(function(){
-        profileButtons($('.activate-btn'), $('.deactivate-btn'), $('.changepass-btn'), $('#user_id'));
-        changepassValidation($('.changepass-1'), $('.changepass-2'), $('.confirm-changepass-modal'), $('.changepass-errorMsg'));
-        submitChangepass($('#changepass-form'), $('.confirm-changepass-modal'), $('.changepass-errorMsg'));
+        scripts_Profile();
     })
 </script>
 @stop

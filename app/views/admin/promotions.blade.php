@@ -24,47 +24,7 @@
 </style>
 
 <script>
-    $(document).ready(function(){
-        $('.uploadBtn').click(function(){
-            $('#imgUpload').attr('action', '/admin/upload/'+$(this).attr('data-locid'));
-            $('#uploadModal').modal('show');
-        });
-
-        $('.upload-modal-btn').click(function(){
-            if(document.getElementById('imageUpload').files.length != 0){
-                $('#imgUpload').submit()
-            }else{
-                alert('Please choose files first.');
-            }
-        });
-
-        $('#imageUpload').change(function(){
-            $('.files-names-div').hide();
-            var inputFile = document.getElementById('imageUpload');
-            for(var i = 0; i < inputFile.files.length; i++){
-                $('.file-names').append('<br/>'+inputFile.files[i].name);
-            }
-            $('.files-names-div').show();
-        });
-
-        promotionsPage();
-
-        $('.deleteLocation').click(function(){
-            var name = $(this).attr('data-locname');
-            $('.deleteLocationModal-body').empty().append('Are you sure you want to delete '+name+'?<br/> All associated articles, videos and images will be also deleted');
-            $('.deleteBtnModal').attr('href', '/admin/deleteLocation/'+$(this).attr('data-locid'));
-            $('#deleteLocationModal').modal().show();
-        })
-
-        $('.links').click(function(){
-            event = event || window.event;
-            var target = event.target || event.srcElement,
-                link = target.src ? target.parentNode : target,
-                options = {index: link, event: event},
-                links = this.getElementsByTagName('a');
-            blueimp.Gallery(links, options);
-        })
-    })
+    $(document).ready(function(){ scripts_Promotions(); })
 </script>
 @stop
 

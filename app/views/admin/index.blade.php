@@ -7,9 +7,7 @@
         }
     </style>
     <script>
-        $(document).ready(function(){
-            ajaxLogin($('#login_form'), $('#login_submitBtn'), $('.div-msg'), $('.login-form'));
-        });
+        $(document).ready(function(){ ajaxLogin($('#login_form'), $('#login_submitBtn'), $('.div-msg'), $('.login-form')); });
     </script>
 @stop
 

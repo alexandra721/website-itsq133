@@ -31,20 +31,7 @@
         }
     </style>
     <script>
-        $(document).ready(function(){
-            $('.contact-us-btn').click(function(){
-                $('#contactUsModal').modal().show();
-            });
-
-            $('.links').click(function(){
-                event = event || window.event;
-                var target = event.target || event.srcElement,
-                    link = target.src ? target.parentNode : target,
-                    options = {index: link, event: event},
-                    links = this.getElementsByTagName('a');
-                blueimp.Gallery(links, options);
-            })
-        })
+        $(document).ready(function(){ scripts_Master(); })
     </script>
     @yield('master-head')
 </head>
@@ -60,8 +47,8 @@
                 <button class="btn website-nav-btn" onclick="return location.href='/login'" style="width: 10em;">LOGIN</button>
                 <button class="btn website-nav-btn" onclick="return location.href='/register'" style="background-color: #1ABC9C; width: 10em; font-weight: bold;">REGISTER</button>
             @else
-                <button class="btn website-nav-btn" onclick="return location.href='/profile'" style="background-color: #F39C12;">{{ Auth::user()->firstname }}</button>
-                <button class="btn website-nav-btn" onclick="return location.href='/doLogout'" style="background-color: #E74C3C;">Logout</button>
+                <button class="btn website-nav-btn" style="background-color: #F39C12; width: 10em; font-weight: bold;">Hi, {{ Auth::user()->firstname }}</button>
+                <button class="btn website-nav-btn" onclick="return location.href='/doLogout'" style="background-color: #E74C3C; width: 10em; font-weight: bold;">Logout</button>
             @endif
         </div>
     </div>
