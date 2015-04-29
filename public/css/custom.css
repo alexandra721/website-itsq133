@@ -1,3 +1,7 @@
+body {
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+}
+
 .updatemsgDiv {
     background-color: #CCFFE2;
     border: solid 0.1em #7FFAB5;

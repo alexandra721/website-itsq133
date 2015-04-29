@@ -2,23 +2,65 @@
 
 @section('master-head')
 <style>
-    h1 {
+    .location-links {
         color : white;
+        cursor: pointer;
+    }
+
+    body {
+        color: white;
     }
 
     img {
         box-shadow: 0 8px 6px -6px black;
         vertical-align: 0; !important;
     }
+
+    .backBtn {
+        padding-top: 0.5em;
+        cursor: pointer;
+        color: #ECF0F1;
+        font-size: 3em;
+        transition : 0.3s;
+        opacity: 0.3;
+    }
+
+    .backBtn:hover {
+        opacity: 1;
+    }
 </style>
+<script>
+    $(document).ready(function(){
+
+//        $('.div1').click(function(){
+//            $(this).slideToggle();
+//            $('.div2').fadeIn('slow');
+//        });
+
+        $('.location-links').click(function(){
+            $('#locations').hide();
+            $('#image_'+$(this).attr('data-locid')).fadeIn();
+        });
+
+        $('.backBtn').click(function(){
+            $('#locations').fadeIn();
+            $('.ALLIMGDIV').hide()
+        });
+    })
+</script>
 @stop
 
 @section('master-body')
 
+<div style="margin-top: 4em; padding: 1em; text-align: center;" id="locations">
+    @foreach($locations as $location)
+        <h1 class="location-links" data-locid="{{ $location->id }}">{{ $location->name }}</h1>
+    @endforeach
+</div>
+
 @foreach($locations as $location)
-    <h1 style="text-align: center; margin-top: 2em;">{{ $location->name }}</h1>
-    <p style="padding: 1em; padding-top: 0; padding-bottom: 0; color: #BDC3C7;"> {{ $location->description }} </p>
-    <div class="col-md-12">
+    <div class="col-md-12 ALLIMGDIV" id="image_{{ $location->id }}" style="display: none; text-align: center;">
+        <div class="col-md-12"><i class="fa fa-chevron-circle-left backBtn" style="float: left;"></i> <h1>{{ $location->name }}</h1></div>
         <div class="links">
             @foreach(Image::where('location_id', $location->id)->get() as $image)
                 <a href="{{ $image->path }}" title="{{ $image->title }}">
@@ -26,16 +68,6 @@
                 </a>
             @endforeach
         </div>
-    </div>
-    <div class="col-md-12" style="margin-top: 2em; color: white;">
-        <div class=""></div>
-        @foreach(Comment::where('location_id', $location->id)->get() as $comment)
-            {{}}
-        @endforeach
-<!--        <div style="color: black; padding: 0.4em; border-radius: 0.3em; margin-bottom: 3em;">-->
-<!--            <textarea placeholder="Leave a comment" class="form-control" style="width: 35%; margin-bottom: 0.4em;" rows="3"></textarea>-->
-<!--            <button class="btn btn-primary">Post</button>-->
-<!--        </div>-->
     </div>
 @endforeach
 @stop

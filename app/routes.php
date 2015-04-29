@@ -82,3 +82,7 @@ Route::group(array('before' => 'ADMIN'), function(){
 App::missing(function(){
     return View::make('Route404');
 });
+
+//App::error(function(){
+//    return View::make('Route500');
+//});

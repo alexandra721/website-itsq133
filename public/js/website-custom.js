@@ -51,6 +51,7 @@ function randomIntFromInterval(min,max)
 }
 
 function scripts_Master(){
+
     $('.contact-us-btn').click(function(){
         $('#contactUsModal').modal().show();
     });
@@ -62,5 +63,32 @@ function scripts_Master(){
             options = {index: link, event: event},
             links = this.getElementsByTagName('a');
         blueimp.Gallery(links, options);
+    });
+
+    $('.profile').click(function(){
+        $('.profile-input').val('');
+        $('.div-changeemail').hide();
+        $('.div-changepass').hide();
+        $('.profile-btns').fadeIn();
+        $('#profileModal').modal('show');
+    });
+
+    $('.changePass').click(function(){
+        $('.profile-input').val('');
+        $('.profile-btns').hide();
+        $('.div-changepass').fadeIn();
+    });
+
+    $('.changeEmail').click(function(){
+        $('.profile-input').val('');
+        $('.profile-btns').hide();
+        $('.div-changeemail').fadeIn();
+    });
+
+    $('.cancel-btn').click(function(){
+        $('.profile-input').val('');
+        $('.div-changeemail').hide();
+        $('.div-changepass').hide();
+        $('.profile-btns').fadeIn();
     })
 }

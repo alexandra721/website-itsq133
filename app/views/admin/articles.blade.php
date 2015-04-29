@@ -17,6 +17,23 @@
         cursor: inherit;
         display: block;
     }
+
+    .elipContent {
+        text-align: justify;
+        display: block; /* Fallback for non-webkit */
+        display: -webkit-box;
+        /*max-width: 400px;*/
+        height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+        max-height: 6em;
+        /*margin: 0 auto;*/
+        font-size: $font-size;
+        line-height: $line-height;
+        -webkit-line-clamp: 4;
+        /*-webkit-line-clamp: $lines-to-show;*/
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 </style>
 <script>
     $(document).ready(function(){ scripts_Article(); })
@@ -57,11 +74,11 @@
                         <input name="articleTitle" class="form-control" type="text" value="{{ $article->title }}" id="title_{{ $article->id }}" style="display: none;"/>
                     </h3>
                     <div style="font-size: 0.8em; color: #95A5A6;">
-                        <span id="origContent_{{ $article->id }}">
+                        <div id="origContent_{{ $article->id }}" class="elipContent" style="">
                             @foreach(ArticleContent::where('article_id', $article->id)->orderBy('order', 'ASC')->get() as $content)
                                 {{ $content->content }}
                             @endforeach
-                        </span>
+                        </div>
                         <div id="content_{{ $article->id }}" style="display: none;">
                             <textarea rows="10" name="articleContent" id="textareaContent_{{ $article->id }}" class="form-control">
                                 @foreach(ArticleContent::where('article_id', $article->id)->orderBy('order', 'ASC')->get() as $content)

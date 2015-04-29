@@ -364,20 +364,20 @@ class AdminController extends \BaseController {
                 $validator = Validator::make(array('file'=> $file), $rules);
                 if($validator->passes()){
                     // path is root/uploads
-                    $destinationPath = 'public/upload';
+                    $destinationPath = 'public/upload_article';
                     $filename = $file->getClientOriginalName();
                     $upload_success = $file->move($destinationPath, $filename);
                     // insert table the details
                     Image::insert(array(
                         'user_id'   =>  Auth::user()->id,
-                        'path'      =>  '/upload/'.$filename,
+                        'path'      =>  '/upload_article/'.$filename,
                         'title'     =>  $filename,
                         'description'   =>  'Enter new description',
                         'article_id'   =>  $id
                     ));
 
                     Article::where('id', $id)->update(array(
-                        'image' =>  '/upload/'.$filename,
+                        'image' =>  '/upload_article/'.$filename,
                     ));
                 }
                 else {

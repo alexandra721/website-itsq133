@@ -33,8 +33,12 @@
             @foreach($articles as $article)
             <div class="col-md-3 article-panel">
                 <div class="thumbnail">
-                    <!--                    <img src="/images/VIS-BORA/1.jpg" alt="Image" class="article-trigger" data-artid="{{ $article->id }}"/>-->
-                    <img src="{{ $article->image }}" alt="Image" class="article-trigger image_{{ $article->id }}" data-artid="{{ $article->id }}"/>
+                    @if($article->image != '')
+                        <img src="{{ $article->image }}" alt="Image" class="article-trigger image_{{ $article->id }}" data-artid="{{ $article->id }}"/>
+                    @else
+                        <img src="/images/noimg_article.png" alt="Image" class="article-trigger image_{{ $article->id }}" data-artid="{{ $article->id }}"/>
+                    @endif
+
                 </div>
                 <div class="article-headline article-trigger title_{{ $article->id }}" data-artid="{{ $article->id }}">
                     {{ $article->title }}
@@ -70,7 +74,7 @@
                         <div class="thumbnail2 articleModal-img"></div>
                         <div class="articleModal-body"></div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" style="border-top: 0;">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
