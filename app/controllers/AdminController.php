@@ -68,7 +68,10 @@ class AdminController extends \BaseController {
     }
 
     public function comments(){
-        return View::make('admin.comments')->with('comments', Comment::orderBy('created_at')->paginate(10))->with('users', User::orderBy('id')->paginate(10));
+//        $userList = User::join('comments', 'comments.user_id', '=', 'users.id')->groupBy('users.id')->orderBy('users.firstname', 'ASC')->paginate(5);
+
+//        return View::make('admin.comments')->with('comments', Comment::orderBy('created_at', 'DESC')->paginate(5))->with('users', $userList);
+        return View::make('admin.comments')->with('comments', Comment::orderBy('created_at', 'DESC')->paginate(5))->with('users', User::orderBy('firstname', 'ASC')->paginate(5));
     }
 
     public function images(){
@@ -76,7 +79,7 @@ class AdminController extends \BaseController {
     }
 
     public function videos(){
-        return View::make('admin.videos')->with('videos', Image::all());
+        return View::make('admin.videos')->with('locations', Location::orderBy('name', 'ASC')->get());
     }
 
     public function upload($id){
@@ -393,5 +396,45 @@ class AdminController extends \BaseController {
         // flash message to show success.
         Session::flash('success', 'Upload success');
         return Redirect::back()->with('successMsg', 'Upload is successful');
+    }
+
+    public function addVideo($id){
+        Video::insert(array(
+            'user_id'           => Auth::user()->id,
+            'path'              => Input::get('VIDEOURL'),
+            'location_id'       => $id,
+        ));
+
+        return Redirect::back()->with('successMsg', 'Video URL saved');
+    }
+
+    public function addVideoFile($id){
+
+    }
+
+    public function manageMedia($id){
+        return View::make('admin.manageMedia')
+            ->with('images', Image::where('location_id', $id)->get())
+            ->with('videos', Video::where('location_id', $id)->get())
+            ->with('location', Location::where('id', $id)->first());
+    }
+
+    public function deleteImage($id){
+        Image::where('id', $id)->delete();
+        return Redirect::back()->with('successMsg', 'Image has been deleted successfully');
+    }
+
+    public function deleteVid($id){
+        Video::where('id', $id)->delete();
+        return Redirect::back()->with('successMsg', 'Video has been deleted successfully');
+    }
+
+    public function deleteComment($id){
+        Comment::where('id', $id)->delete();
+        return Redirect::back()->with('successMsg', 'Comment has been deleted successfully');
+    }
+
+    public function viewUserComments($id){
+        return View::make('admin.commentsByUser')->with('user', User::where('id', $id)->first());
     }
 }

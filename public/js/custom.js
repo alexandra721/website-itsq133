@@ -93,6 +93,16 @@ function submitChangepass(form, btn, div){
 }
 
 function scripts_Promotions(){
+    $('.uploadVideoBtnFile').click(function(){
+        $('#addVideoFileForm').attr('action', '/admin/addVideoFile/'+$(this).attr('data-locid'));
+        $('#uploadVideoFileModal').modal('show');
+    });
+
+    $('.uploadVideoBtn').click(function(){
+        $('#addVideoForm').attr('action', '/admin/addVideo/'+$(this).attr('data-locid'));
+        $('#uploadVideoModal').modal('show');
+    });
+
     $('#imageUpload').change(function(){
         $('.files-names-div').hide();
         var inputFile = document.getElementById('imageUpload');

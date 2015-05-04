@@ -60,11 +60,9 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!-- Brand -->
-                    <div class="brand-name-wrapper" style="background-color: #34495E;">
-                        <a href="admin/yprofile" class="navbar-brand" style="color: white; padding-top: 0.5em;">
+                    <div class="brand-name-wrapper" style="background-color: #34495E; color: white; text-align: center; padding: 0.8em; font-size: 1.2em">
 <!--                            <i class="fa fa-star" style="color: #F1C40F"></i>-->
-                            <img class="thumbnail-custom"  src="{{ Auth::user()->profile_photo }}" style="display: inline"/>&nbsp;&nbsp;&nbsp;{{ Auth::user()->firstname }}
-                        </a>
+                        Hi, {{ Auth::user()->firstname }}
                     </div>
 
                     <!-- Search -->
@@ -104,6 +102,7 @@
                                 <ul class="nav navbar-nav">
                                     <li><a href="/admin/general"><span class="glyphicon glyphicon-cog"></span> General</a></li>
                                     <li><a href="/admin/comments"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>
+<!--                                    <li><a href="/admin/userComments"><span class="glyphicon glyphicon-user"></span> Comments by User</a></li>-->
 <!--                                    <li><a href="/admin/aboutus"><span class="glyphicon glyphicon-heart"></span> About us</a></li>-->
 <!--                                    <li><a href="/admin/homeManage"><span class="glyphicon glyphicon-home"></span> Home</a></li>-->
 <!--                                    <li><a href="/admin/contactus"><span class="glyphicon glyphicon-earphone"></span> Contact us</a></li>-->

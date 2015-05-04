@@ -68,7 +68,9 @@ Route::filter('DESTROY-USER', function(){
 
 Route::filter('ROUTE-PROTECT', function(){
     if(Auth::check()){
-        return Redirect::to('/');
+        if(Auth::user()->role != 'USER'){
+            Auth::logout();
+        }
     }
 });
 

@@ -18,6 +18,7 @@
         body{
             background-attachment:fixed;
             transition : 0.8s;
+            background-color: #2C3E50;
         }
 
         .contactUsModal-body {
@@ -90,7 +91,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel" style="text-align: center;"><i class="fa fa-heart" style="color: red"></i> Contact us!</h4>
+                    <h4 class="modal-title" id="myModalLabel" style="text-align: center; color: #000000;"><i class="fa fa-heart" style="color: red"></i> Contact us!</h4>
                 </div>
                 <div class="modal-body contactUsModal-body">
                     <h4>{{ Content::where('type', 'slogan')->pluck('content') }}</h4>

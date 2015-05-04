@@ -133,6 +133,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/models/Video.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/routes.php">
           <value>
             <set />
@@ -159,6 +164,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/comments.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/commentsByUser.blade.php">
           <value>
             <set />
           </value>
@@ -198,6 +208,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/manageMedia.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/preview/about.blade.php">
           <value>
             <set />
@@ -209,6 +224,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/promotions.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/usercomments.blade.php">
           <value>
             <set />
           </value>

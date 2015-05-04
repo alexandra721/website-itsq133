@@ -71,7 +71,8 @@ class WebMainController extends \BaseController {
 
     public function doLogout(){
         Auth::logout();
-        return Redirect::to('/');
+//        return Redirect::to('/');
+        return Redirect::back();
     }
 
     public function doLogin(){
@@ -94,5 +95,36 @@ class WebMainController extends \BaseController {
 
     public function getArticle($id){
         return Article::where('id', $id)->first();
+    }
+
+    public function postComment($locid, $userid){
+        $msg = '';
+        $content = '';
+        $name = Auth::user()->firstname.' '.Auth::user()->lastname;
+        date_default_timezone_set("Asia/Manila");
+        $tStamp = date("Y:m:d H:i:s");
+        $comId = '';
+        if(strlen(trim(strip_tags(Input::get('comment')))) != 0){
+            Comment::insert(array(
+                'user_id'   =>  $userid,
+                'content'   =>  Input::get('comment'),
+                'location_id'   =>  $locid,
+                'created_at'            =>  $tStamp,
+                'updated_at'            =>  $tStamp,
+            ));
+            $msg = 'SUCCESS';
+            $content = Input::get('comment');
+            $comId = Comment::where('created_at', $tStamp)->where('user_id', $userid)->pluck('id');
+        }else{
+            $msg = 'FAILED';
+        }
+
+        return array(
+            'id'    =>  $comId,
+            'msg'   =>  $msg,
+            'name'  =>  $name,
+            'tStamp'    =>  $tStamp,
+            'content'   =>  $content
+        );
     }
 }

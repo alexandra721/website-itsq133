@@ -12,11 +12,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-
 // WEBSITE ROUTES -- START
 Route::group(array('before' => 'DESTROY-ADMIN'), function(){
     Route::get('/', 'WebMainController@index');
@@ -33,6 +28,7 @@ Route::group(array('before' => 'DESTROY-ADMIN'), function(){
 Route::group(array('before' => 'ROUTE-PROTECT'), function(){
     Route::get('/login', 'WebMainController@login');
     Route::get('/register', 'WebMainController@register');
+    Route::post('/postComment/{locid}/{userid}', 'WebMainController@postComment');
 });
 // WEBSITE ROUTES -- END
 
@@ -53,6 +49,7 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/profile/{id}', 'AdminController@profile');
     Route::post('/admin/changepass/{id}', 'AdminController@changepass');
     Route::get('/admin/comments', 'AdminController@comments');
+    Route::get('/admin/userComments', 'AdminController@userComments');
     Route::get('/admin/images', 'AdminController@images');
     Route::get('/admin/videos', 'AdminController@videos');
     Route::post('/admin/upload/{id}', 'AdminController@upload');
@@ -74,14 +71,21 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/deleteLocation/{id}', 'AdminController@deleteLocation');
     Route::post('/admin/editArticle', 'AdminController@editArticle');
     Route::post('/admin/uploadArticleImage/{id}', 'AdminController@uploadArticleImage');
+    Route::post('/admin/addVideo/{id}', 'AdminController@addVideo');
+    Route::post('/admin/addVideoFile/{id}', 'AdminController@addVideoFile');
+    Route::get('/admin/manageMedia/{id}', 'AdminController@manageMedia');
+    Route::get('/admin/deleteImage/{id}', 'AdminController@deleteImage');
+    Route::get('/admin/deleteVid/{id}', 'AdminController@deleteVid');
+    Route::get('/admin/deleteComment/{id}', 'AdminController@deleteComment');
+    Route::get('/viewUserComments/{id}', 'AdminController@viewUserComments');
 });
 
 // ADMIN ROUTES -- END
 
 // THIS FUNCTION IS FOR ROUTE PROTECTION - IT REDIRECTS THE SYSTEM WHEN THE ROUTE/METHOD IS NOT FOUND AND/OR DOESN'T EXIST - Jan Sarmiento
-App::missing(function(){
-    return View::make('Route404');
-});
+//App::missing(function(){
+//    return View::make('Route404');
+//});
 
 //App::error(function(){
 //    return View::make('Route500');

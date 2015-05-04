@@ -63,7 +63,7 @@
                         <span id="origName_{{ $location->id }}">{{ $location->name }}</span>
                         <input name="locationName" class="form-control" type="text" value="{{ $location->name }}" id="name_{{ $location->id }}" style="display: none;"/>
                     </h3>
-                    <div style="font-size: 0.8em; color: #95A5A6;">
+                    <div style="font-size: 0.8em; color: #95A5A6; overflow-wrap: break-word;">
                         <span id="origDesc_{{ $location->id }}">{{ $location->description }}</span>
                         <div id="desc_{{ $location->id }}" style="display: none;">
                             <textarea name="locationDescription" id="textareaDesc_{{ $location->id }}" class="form-control" >{{ $location->description }}</textarea>
@@ -79,12 +79,25 @@
                             @endforeach
                         </div>
                     </div>
+                    <div class="well" style="margin: 0; margin-top: 1em; padding: 0.4em;">
+                        <div class="links">
+                            @foreach(Video::where('location_id', $location->id)->get() as $video)
+                                {{ $video->path }}
+<!--                                <iframe width="420" height="315" src="{{ $video->path }}"></iframe>-->
+<!--                                <iframe width="560" height="315" src="{{ $video->path }}" frameborder="0" allowfullscreen></iframe>-->
+<!--                                <iframe width="400" height="200" src="https://www.youtube.com/embed/KXQvpFxytUk" frameborder="0" allowfullscreen></iframe>-->
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-footer" style="border: solid 0.1em #BDC3C7">
                     <div class="btn-group btnSet1_{{ $location->id }}" role="group" aria-label="...">
                         <button type="button" class="btn btn-default" onclick="location.href='/admin/article/{{ $location->id }}'"><i class="glyphicon glyphicon-paperclip"></i> Articles</button>
                         <button type="button" class="btn btn-default uploadBtn" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Upload Image</button>
+                        <button type="button" class="btn btn-default uploadVideoBtn" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Embed Video</button>
+                        <button type="button" class="btn btn-default uploadVideoBtnFile" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Upload Video</button>
                         <button type="button" class="btn btn-default editInfo" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-edit"></i> Edit Info</button>
+                        <button type="button" class="btn btn-default" onclick="location.href='/admin/manageMedia/{{ $location->id }}'" "><i class="glyphicon glyphicon-edit"></i> Manage Media</button>
                         <button type="button" class="btn btn-danger deleteLocation" data-locid="{{ $location->id }}" data-locname="{{ $location->name }}"><i class="glyphicon glyphicon-remove-circle"></i> Delete</button>
                     </div>
                     <div class="btn-group btnSet2_{{ $location->id }}" role="group" aria-label="..." style="display: none;">
@@ -161,6 +174,46 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" onclick="location.href=''">Cancel</button>
                 <button type="button" class="btn btn-success upload-modal-btn">Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{ Form::close() }}
+
+{{ Form::open(array('url' => '/admin/addVideo', 'class' => 'form-horizontal', 'id' => 'addVideoForm')) }}
+<div class="modal fade" id="uploadVideoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-upload" style="color: #9B59B6"></i> Add Video URL</h4>
+            </div>
+            <div class="modal-body upload-modal-body">
+                <input type="text" name="VIDEOURL" class="form-control" placeholder="Enter video embed code" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="location.href=''">Cancel</button>
+                <button type="submit" class="btn btn-success">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{ Form::close() }}
+
+{{ Form::open(array('url' => '/admin/addVideo', 'class' => 'form-horizontal', 'id' => 'addVideoFileForm', 'files' => 'true')) }}
+<div class="modal fade" id="uploadVideoFileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-upload" style="color: #9B59B6"></i> Upload Video</h4>
+            </div>
+            <div class="modal-body upload-modal-body">
+                <input type="file" name="video" accept="video/*"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="location.href=''">Cancel</button>
+                <button type="submit" class="btn btn-success">Add</button>
             </div>
         </div>
     </div>
