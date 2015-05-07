@@ -23,6 +23,7 @@ Route::group(array('before' => 'DESTROY-ADMIN'), function(){
     Route::post('/doLogin', 'WebMainController@doLogin');
     Route::post('/doRegister', 'WebMainController@doRegister');
     Route::get('/getArticle/{id}', 'WebMainController@getArticle');
+    Route::get('/deleteComment/{id}', 'WebMainController@deleteComment');
 });
 
 Route::group(array('before' => 'ROUTE-PROTECT'), function(){
@@ -78,6 +79,9 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/deleteVid/{id}', 'AdminController@deleteVid');
     Route::get('/admin/deleteComment/{id}', 'AdminController@deleteComment');
     Route::get('/viewUserComments/{id}', 'AdminController@viewUserComments');
+    Route::get('/admin/bgImage', 'AdminController@bgImage');
+    Route::post('/admin/uploadBgImg', 'AdminController@uploadBgImg');
+    Route::get('/admin/manageBgImg', 'AdminController@manageBgImg');
 });
 
 // ADMIN ROUTES -- END

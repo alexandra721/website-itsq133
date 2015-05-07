@@ -14,6 +14,18 @@
 <script>
     $(document).ready(function(){
         scripts_HomePage();
+
+        var imgUrl = [];
+        @for($i = 0; $i < Image::where('title', '_SITEBG')->count(); $i++)
+            imgUrl[{{$i}}] = '{{ Image::where('title', '_SITEBG')->get()[$i]->path }}';
+        @endfor
+
+        setInterval(function(){
+            var randNum = randomIntFromInterval(0,{{Image::where('title', '_SITEBG')->count()-1}});
+            var bgUrl = imgUrl[randNum];
+            console.log(bgUrl);
+            $('body').css('background-image','url("'+bgUrl+'")');
+        }, 5000);
     });
 </script>
 @stop
@@ -40,7 +52,7 @@
                     @endif
 
                 </div>
-                <div class="article-headline article-trigger title_{{ $article->id }}" data-artid="{{ $article->id }}">
+                <div class="article-headline article-trigger title_{{ $article->id }}" data-artid="{{ $article->id }}" title="{{ $article->title }}">
                     {{ $article->title }}
                 </div>
                 <div class="article-text article_{{ $article->id }}">

@@ -102,6 +102,7 @@
                                 <ul class="nav navbar-nav">
                                     <li><a href="/admin/general"><span class="glyphicon glyphicon-cog"></span> General</a></li>
                                     <li><a href="/admin/comments"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>
+                                    <li><a href="/admin/bgImage"><span class="glyphicon glyphicon-picture"></span> Background Images</a></li>
 <!--                                    <li><a href="/admin/userComments"><span class="glyphicon glyphicon-user"></span> Comments by User</a></li>-->
 <!--                                    <li><a href="/admin/aboutus"><span class="glyphicon glyphicon-heart"></span> About us</a></li>-->
 <!--                                    <li><a href="/admin/homeManage"><span class="glyphicon glyphicon-home"></span> Home</a></li>-->
@@ -112,16 +113,16 @@
                     </li>
 
                     <!-- Dropdown-->
-                    <li class="panel panel-default" id="dropdown">
-                        <a data-toggle="collapse" href="#dropdown-lvl1">
-                            <span class="glyphicon glyphicon-camera"></span> Gallery <span class="caret"></span>
-                        </a>
-                        <!-- Dropdown level 1 -->
-                        <div id="dropdown-lvl1" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="/admin/images"><span class="glyphicon glyphicon-picture"></span> Images</a></li>
-                                    <li><a href="/admin/videos"><span class="glyphicon glyphicon-film"></span> Videos</a></li>
+<!--                    <li class="panel panel-default" id="dropdown">-->
+<!--                        <a data-toggle="collapse" href="#dropdown-lvl1">-->
+<!--                            <span class="glyphicon glyphicon-camera"></span> Gallery <span class="caret"></span>-->
+<!--                        </a>-->
+<!--                        <!-- Dropdown level 1 -->
+<!--                        <div id="dropdown-lvl1" class="panel-collapse collapse">-->
+<!--                            <div class="panel-body">-->
+<!--                                <ul class="nav navbar-nav">-->
+<!--                                    <li><a href="/admin/images"><span class="glyphicon glyphicon-picture"></span> Images</a></li>-->
+<!--                                    <li><a href="/admin/videos"><span class="glyphicon glyphicon-film"></span> Videos</a></li>-->
 <!---->
 <!--                                     Dropdown level 2 -->
 <!--                                    <li class="panel panel-default" id="dropdown">-->
@@ -138,12 +139,12 @@
 <!--                                            </div>-->
 <!--                                        </div>-->
 <!--                                    </li>-->
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </li>-->
 
-                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Reports</a></li>
+<!--                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Reports</a></li>-->
                     <li><a href="/admin/logout"><span class="glyphicon glyphicon-log-out" style="color: firebrick;"></span> Logout</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->

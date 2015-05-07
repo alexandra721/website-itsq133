@@ -409,7 +409,25 @@ class AdminController extends \BaseController {
     }
 
     public function addVideoFile($id){
+        $file = Input::file('video');
 
+        if($file->getClientOriginalExtension() != 'mp4'){
+            return Redirect::back()->with('errorMsg', 'Only .mp4 video files are allowed');
+        }
+
+        $destinationPath = 'public/upload/video';
+        $filename = $file->getClientOriginalName();
+        $upload_success = $file->move($destinationPath, $filename);
+
+        Video::insert(array(
+            'user_id'       =>  Auth::user()->id,
+            'path'          =>  '/upload/video/'.$filename,
+            'title'         =>  $filename,
+            'description'   =>  'Enter new description',
+            'location_id'   =>  $id
+        ));
+
+        return Redirect::back()->with('successMsg', 'Upload is successful');
     }
 
     public function manageMedia($id){
@@ -436,5 +454,52 @@ class AdminController extends \BaseController {
 
     public function viewUserComments($id){
         return View::make('admin.commentsByUser')->with('user', User::where('id', $id)->first());
+    }
+
+    public function bgImage(){
+        return View::make('admin.bgImage')->with('images', Image::where('title', '_SITEBG')->get());
+    }
+
+    public function uploadBgImg(){
+        $files = Input::file('bgImg');
+
+        if(isset($files)){
+            foreach($files as $file){
+                if($file->getClientOriginalExtension() != 'jpg'){
+                    return Redirect::back('errorMsg', 'Upload only accepts .jpg images');
+                }
+            }
+
+            foreach($files as $file) {
+                $newFileName = Image::where('title', '_SITEBG')->count()+1;
+                // validating each file.
+                $rules = array('file' => 'required|mimes:png,jpeg,jpg'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+                $validator = Validator::make(array('file'=> $file), $rules);
+                if($validator->passes()){
+                    // path is root/uploads
+                    $destinationPath = 'public/uploadBGimg';
+                    $filename = $newFileName.'.'.$file->getClientOriginalExtension();
+                    $upload_success = $file->move($destinationPath, $filename);
+
+                    // insert table the details
+                    Image::insert(array(
+                        'user_id'   =>  Auth::user()->id,
+                        'path'      =>  '/uploadBGimg/'.$filename,
+                        'title'     =>  '_SITEBG',
+                        'description'   =>  'Enter new description',
+                    ));
+                }
+                else {
+                    return Redirect::back()->with('errorMsg', 'Please choose a file before submitting.');
+                }
+            }
+        }else{
+            return Redirect::back()->with('errorMsg', 'Please choose a file before submitting.');
+        }
+        return Redirect::back()->with('successMsg', 'Upload is successful');
+    }
+
+    public function manageBgImg(){
+        return View::make('admin.manageBgImg')->with('images', Image::where('title', '_SITEBG')->get());
     }
 }

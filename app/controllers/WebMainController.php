@@ -127,4 +127,9 @@ class WebMainController extends \BaseController {
             'content'   =>  $content
         );
     }
+
+    public function deleteComment($id){
+        Comment::where('id', $id)->delete();
+        return 'SUCCESS';
+    }
 }

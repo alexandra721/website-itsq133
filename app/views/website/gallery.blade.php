@@ -29,6 +29,10 @@
 
     }
 
+    .deleteCommentButton:hover {
+        /*background-color: #3498DB;*/
+    }
+
     .comment-item {
         border-radius: 0.2em;
         /*background-color: #ECF0F1;*/
@@ -46,13 +50,13 @@
         font-weight: bold;
         color: #2980B9;
         font-size: 1.1em;
-        display: inline;
+        /*display: inline;*/
     }
 
     .comment-content {
         display: inline;
         margin: 0 auto;
-
+        overflow-wrap: break-word;
         color: #333333;
         font-size: 0.9em;
     }
@@ -79,6 +83,26 @@
     }
 </style>
 <script>
+    function deleteThisComment(id){
+        if(id != null){
+            $.ajax({
+                type    :   'GET',
+                url     :   '/deleteComment/'+id,
+                success :   function(data){
+                    if(data == 'SUCCESS'){
+                        $('.comment_'+id).fadeOut().remove();
+                    }else{
+                        alert('ERROR 500 : Please check network connectivity.');
+                    }
+                },error :   function(){
+                    alert('ERROR 500 : Please check network connectivity.');
+                }
+            });
+        }else{
+            alert('ERROR 500 : Please check network connectivity.');
+        }
+    }
+
     $(document).ready(function(){
         $('.comment-container').animate({scrollTop: $('.comment-container')[0].scrollHeight});
 
@@ -131,6 +155,7 @@
             $('#locations').fadeIn();
             $('.ALLIMGDIV').hide()
         });
+
     })
 </script>
 @stop
@@ -156,9 +181,17 @@
             </div>
             @if(Video::where('location_id', $location->id)->count() != 0)
                 <center>
-<!--                    <hr/>-->
-                    @foreach(Video::where('location_id', $location->id)->get() as $vid)
-                        {{ $vid->path }}
+                    <hr/>
+                    @foreach(Video::where('location_id', $location->id)->get() as $video)
+                        @if($video->title)
+                            <video width="400" controls>
+                                <source src="{{ $video->path }}" type="video/mp4">
+                                <!--                                        <source src="mov_bbb.ogg" type="video/ogg">-->
+                                Your browser does not support HTML5 video.
+                            </video>
+                        @else
+                            {{ $video->path }}
+                        @endif
                     @endforeach
                 </center>
             @endif
@@ -166,12 +199,18 @@
         <div class="col-md-4 comment-panel">
             <div style="max-height: 30em; overflow-y: auto;" class="comment-container">
                 @foreach(Comment::where('location_id', $location->id)->orderBy('id', 'ASC')->get() as $comment)
-                    <div class="comment-item">
-                        <div class="comment-header">{{ User::where('id', $comment->user_id)->pluck('firstname') }}</div>
+                    <div class="comment-item comment_{{$comment->id}}">
+                        <div class="comment-header">
+                            {{ User::where('id', $comment->user_id)->pluck('firstname') }}
+                            <i class="fa fa-times pull-right" style="color: #BDC3C7; cursor: pointer;" onclick="deleteThisComment('{{ $comment->id }}')"></i>
+                        </div>
                         <div class="comment-content">
                             {{ $comment->content }}
                         </div>
-                        <div class="comment-timestamp"><i class="fa fa-clock-o" style="color: #2980B9;"></i> {{ $comment->created_at }}</div>
+                        <div class="comment-timestamp"><i class="fa fa-clock-o" style="color: #2980B9;"></i>
+                            {{ $comment->created_at }}
+<!--                            <i class="fa fa-trash"></i>-->
+                        </div>
                     </div>
                 @endforeach
             </div>

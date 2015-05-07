@@ -20,11 +20,6 @@ function websiteLogin(form, btn, div){
 }
 
 function scripts_HomePage(){
-    setInterval(function(){
-        var randNum = randomIntFromInterval(2,12);
-        $('body').css('background-image','url("/images/body/'+randNum+'.jpg")');
-    }, 5000);
-
     $('.article-trigger').click(function(){
         $('.body1').show();
         $('.body2').hide();

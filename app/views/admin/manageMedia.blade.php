@@ -48,7 +48,15 @@
 
 @foreach($videos as $video)
     <div class="well" style="text-align: center;">
-        {{ $video->path }}
+        @if($video->title)
+        <video width="400" controls>
+            <source src="{{ $video->path }}" type="video/mp4">
+            <!--                                        <source src="mov_bbb.ogg" type="video/ogg">-->
+            Your browser does not support HTML5 video.
+        </video>
+        @else
+            {{ $video->path }}
+        @endif
         <br/>
         <button class="btn btn-danger deleteVidBtn" style="width: 30%" data-delete="/admin/deleteVid/{{$video->id}}">Delete this video</button>
     </div>

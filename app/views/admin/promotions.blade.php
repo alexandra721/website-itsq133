@@ -66,7 +66,7 @@
                     <div style="font-size: 0.8em; color: #95A5A6; overflow-wrap: break-word;">
                         <span id="origDesc_{{ $location->id }}">{{ $location->description }}</span>
                         <div id="desc_{{ $location->id }}" style="display: none;">
-                            <textarea name="locationDescription" id="textareaDesc_{{ $location->id }}" class="form-control" >{{ $location->description }}</textarea>
+                            <textarea name="locationDescription" id="textareaDesc_{{ $location->id }}" class="form-control" maxlength="255">{{ $location->description }}</textarea>
                             <font color="red"><i class="fa fa-warning"></i><i> Description has 255 character limit</font></i>
                         </div>
                     </div>
@@ -82,7 +82,15 @@
                     <div class="well" style="margin: 0; margin-top: 1em; padding: 0.4em;">
                         <div class="links">
                             @foreach(Video::where('location_id', $location->id)->get() as $video)
-                                {{ $video->path }}
+                                @if($video->title)
+                                    <video width="400" controls>
+                                        <source src="{{ $video->path }}" type="video/mp4">
+<!--                                        <source src="mov_bbb.ogg" type="video/ogg">-->
+                                        Your browser does not support HTML5 video.
+                                    </video>
+                                @else
+                                    {{ $video->path }}
+                                @endif
 <!--                                <iframe width="420" height="315" src="{{ $video->path }}"></iframe>-->
 <!--                                <iframe width="560" height="315" src="{{ $video->path }}" frameborder="0" allowfullscreen></iframe>-->
 <!--                                <iframe width="400" height="200" src="https://www.youtube.com/embed/KXQvpFxytUk" frameborder="0" allowfullscreen></iframe>-->
@@ -94,7 +102,7 @@
                     <div class="btn-group btnSet1_{{ $location->id }}" role="group" aria-label="...">
                         <button type="button" class="btn btn-default" onclick="location.href='/admin/article/{{ $location->id }}'"><i class="glyphicon glyphicon-paperclip"></i> Articles</button>
                         <button type="button" class="btn btn-default uploadBtn" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Upload Image</button>
-                        <button type="button" class="btn btn-default uploadVideoBtn" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Embed Video</button>
+<!--                        <button type="button" class="btn btn-default uploadVideoBtn" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Embed Video</button>-->
                         <button type="button" class="btn btn-default uploadVideoBtnFile" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Upload Video</button>
                         <button type="button" class="btn btn-default editInfo" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-edit"></i> Edit Info</button>
                         <button type="button" class="btn btn-default" onclick="location.href='/admin/manageMedia/{{ $location->id }}'" "><i class="glyphicon glyphicon-edit"></i> Manage Media</button>
@@ -120,7 +128,8 @@
             </div>
             <div class="modal-body">
                 {{ Form::text('locationName', Input::old('locationName'),array('class' => 'addLocationInput form-control margin-bottom-10', 'placeholder' => 'Enter location name here')) }}
-                {{ Form::textarea('locationDescription', Input::old('locationDescription'),array('class' => 'addLocationInput form-control margin-bottom-10', 'placeholder' => 'Enter location description here')) }}
+                {{ Form::textarea('locationDescription', Input::old('locationDescription'),array('maxlength' => '255', 'class' => 'addLocationInput form-control margin-bottom-10', 'placeholder' => 'Enter location description here', 'rows' => '5')) }}
+                <span style="color: red; font-size: 0.8em"><i>*Only 255 characters allowed on location description</i></span>
             </div>
             <div class="modal-footer">
                 <div class="pull-right">
@@ -209,11 +218,12 @@
                 <h4 class="modal-title" id="myModalLabel"><i class="fa fa-upload" style="color: #9B59B6"></i> Upload Video</h4>
             </div>
             <div class="modal-body upload-modal-body">
-                <input type="file" name="video" accept="video/*"/>
+                <center><span style="color: red; font-size: 0.9em; text-align: center;">Only .mp4 format is supported</span></center>
+                <input type="file" name="video" accept="video/mp4"/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" onclick="location.href=''">Cancel</button>
-                <button type="submit" class="btn btn-success">Add</button>
+                <button type="submit" class="btn btn-success">Upload</button>
             </div>
         </div>
     </div>

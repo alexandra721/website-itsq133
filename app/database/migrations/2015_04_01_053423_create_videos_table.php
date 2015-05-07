@@ -16,6 +16,7 @@ class CreateVideosTable extends Migration {
             $table->increments('id');
             $table->integer('user_id');
             $table->string('path');
+            $table->string('location_id');
             $table->string('title');
             $table->string('description');
             $table->timestamps();
