@@ -202,7 +202,11 @@
                     <div class="comment-item comment_{{$comment->id}}">
                         <div class="comment-header">
                             {{ User::where('id', $comment->user_id)->pluck('firstname') }}
-                            <i class="fa fa-times pull-right" style="color: #BDC3C7; cursor: pointer;" onclick="deleteThisComment('{{ $comment->id }}')"></i>
+                            @if(Auth::check())
+                                @if(Auth::user()->id == $comment->user_id)
+                                    <i class="fa fa-times pull-right" style="color: #BDC3C7; cursor: pointer;" onclick="deleteThisComment('{{ $comment->id }}')"></i>
+                                @endif
+                            @endif    
                         </div>
                         <div class="comment-content">
                             {{ $comment->content }}
