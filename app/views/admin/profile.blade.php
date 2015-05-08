@@ -24,10 +24,7 @@
 <hr/>
 <div class="well" style="margin-top: 3em;">
     <div class="row">
-        <div class="col-md-3">
-            <img src="{{ $user->profile_photo }}" class="img-rounded img-responsive"/>
-        </div>
-        <div class="col-md-5" style="padding: 0.5em;">
+        <div class="col-md-8" style="padding: 0.5em;">
             <table border="0" style="width: 100%; font-size: 1em;">
                 <tr>
                     <td style="width: 20%; text-align: right">Name</td>
@@ -68,20 +65,11 @@
                 <button data-name="{{$user->firstname}} {{$user->lastname}}" data-href="/admin/deactivate/{{$user->id}}" style="width: 100%; margin-bottom: 0.5em;" class="btn btn-danger deactivate-btn"><i class="fa fa-times"></i> Deactivate</button>
             @endif
             <button data-name="{{$user->firstname}} {{$user->lastname}}" style="width: 100%; margin-bottom: 0.5em;" class="btn btn-primary changepass-btn"><i class="glyphicon glyphicon-asterisk"></i> Change password</button>
+            <button style="width: 100%; margin-bottom: 0.5em;" onclick="location.href='/viewUserComments/{{ $user->id }}'" class="btn btn-success "><i class="glyphicon glyphicon-comment"></i> View User Comments</button>
         </div>
     </div>
 </div>
 <hr/>
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        Comments of {{ $user->firstname }} {{ $user->lastname }} : Total of {{ $comments->count() }}
-    </div>
-    <div class="panel-body">
-        @if($comments->count() == 0)
-        <center><i>No comments found.</i></center>
-        @endif
-    </div>
-</div>
 
 <!--MODAL CODES -- START-->
 <div class="modal fade" id="deactivateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

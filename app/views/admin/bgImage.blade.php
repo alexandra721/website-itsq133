@@ -94,7 +94,7 @@
                 <h4 class="modal-title" id="myModalLabel"><i class="fa fa-upload" style="color: #9B59B6"></i> Upload Background Image</h4>
             </div>
             <div class="modal-body upload-modal-body">
-                <span style="font-size: 0.8em; color: red;"><i>*Background images only accepts .jpg</i></span>
+                <span style="font-size: 0.8em; color: red;"><i>*Background images only accepts .jpg, .png and jpeg</i></span>
                 <input type="file" name="bgImg[]" accept="image/*" multiple required="required"/>
             </div>
             <div class="modal-footer">

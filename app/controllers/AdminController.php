@@ -464,11 +464,11 @@ class AdminController extends \BaseController {
         $files = Input::file('bgImg');
 
         if(isset($files)){
-            foreach($files as $file){
-                if($file->getClientOriginalExtension() != 'jpg'){
-                    return Redirect::back('errorMsg', 'Upload only accepts .jpg images');
-                }
-            }
+//            foreach($files as $file){
+//                if(strtoupper($file->getClientOriginalExtension()) != 'JPG'){
+//                    return Redirect::back()->with('errorMsg', 'Upload only accepts .jpg images');
+//                }
+//            }
 
             foreach($files as $file) {
                 $newFileName = Image::where('title', '_SITEBG')->count()+1;
