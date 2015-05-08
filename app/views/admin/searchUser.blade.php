@@ -12,29 +12,31 @@
 <div class="row" style="margin-bottom: 1em;">
     <form method="POST" action="/admin/searchUsers"">
 
-    <div class="col-md-2">
+    <div class="col-md-2" style="padding: 0">
 
         <select class="form-control" name="selectBy">
             <option value="username">Username</option>
             <option value="firstname">Firstname</option>
             <option value="lastname">Lastname</option>
             <option value="email">Email</option>
+            <option value="role">Role</option>
         </select>
     </div>
-    <div class="col-md-8">
-        <input type="text" class="form-control" name="keyword"/>
+    <div class="col-md-8" style="padding: 0; padding-left: 0.4em;">
+        <input placeholder="Enter search keyword here (No keyword will result in displaying all Users)" maxlength="100" type="text" class="form-control" name="keyword"/>
     </div>
-    <div class="col-md-2">
-
-        <button class="btn btn-primary">Search for user</button>
+    <div class="col-md-2" style="padding: 0; padding-left: 0.4em;">
+        <button class="btn btn-warning btn-block"><i class="fa fa-search"></i> Search for user</button>
     </div>
     </form>
 </div>
 @if(@$users)
-
+    @if($users->count() == 0)
+        <center><i style="font-weight: bold; font-size: 1.2em; margin-top: 5em;">No results found</i></center>
+    @else
 <div class="panel panel-primary">
     <div class="panel-heading">
-        List of users found
+        List of users found :
     </div>
     <div class="panel-body">
         <table class="table table-responsive table-striped table-hover" style="font-size: 1em;">
@@ -85,5 +87,6 @@
         {{ $users->links() }}
     </div>
 </div>
+    @endif
 @endif
 @stop
