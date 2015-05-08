@@ -502,4 +502,18 @@ class AdminController extends \BaseController {
     public function manageBgImg(){
         return View::make('admin.manageBgImg')->with('images', Image::where('title', '_SITEBG')->get());
     }
+
+    public function searchUsers(){
+        return View::make('admin.searchUser');
+    }
+
+    public function doSearchUsers() {
+        if(Input::get('keyword') != ''){
+//            return Redirect::back()->with('users', User::where(Input::get('selectBy'), 'LIKE', '%'.Input::get('keyword').'%')->get());
+            return View::make('admin.searchUser')->with('users', User::where(Input::get('selectBy'), 'LIKE', '%'.Input::get('keyword').'%')->paginate(10));
+        }else{
+//            return Redirect::back()->with('users', User::orderBy('username', 'ASC')->get());
+            return View::make('admin.searchUser')->with('users', User::orderBy('username', 'ASC')->paginate(10));
+        }
+    }
 }

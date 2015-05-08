@@ -12,6 +12,9 @@
     <div class="panel panel-primary">
         <div class="panel-heading">
             List of users : Total of {{ $user_count }}
+            <div class="pull-right" style="margin-top: -0.5em; margin-right: -0.8em">
+                <a class="btn btn-default" href="/admin/searchUsers"><i class="fa fa-plus"></i> Search for Users</a>
+            </div>
         </div>
         <div class="panel-body">
             <table class="table table-responsive table-striped table-hover" style="font-size: 1em;">

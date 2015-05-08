@@ -82,6 +82,8 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/bgImage', 'AdminController@bgImage');
     Route::post('/admin/uploadBgImg', 'AdminController@uploadBgImg');
     Route::get('/admin/manageBgImg', 'AdminController@manageBgImg');
+    Route::get('/admin/searchUsers', 'AdminController@searchUsers');
+    Route::post('/admin/searchUsers', 'AdminController@doSearchUsers');
 });
 
 // ADMIN ROUTES -- END
