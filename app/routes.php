@@ -68,6 +68,7 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::post('/admin/addLocation', 'AdminController@addLocation');
     Route::post('/admin/editLocation', 'AdminController@editLocation');
     Route::get('/admin/article/{id}', 'AdminController@article');
+    Route::get('/admin/deleteArticle_{artid}', 'AdminController@deleteArticle');
     Route::post('/admin/addArticle', 'AdminController@addArticle');
     Route::get('/admin/deleteLocation/{id}', 'AdminController@deleteLocation');
     Route::post('/admin/editArticle', 'AdminController@editArticle');
@@ -84,6 +85,9 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/manageBgImg', 'AdminController@manageBgImg');
     Route::get('/admin/searchUsers', 'AdminController@searchUsers');
     Route::post('/admin/searchUsers', 'AdminController@doSearchUsers');
+    Route::get('/admin/auditTrail', 'AdminController@auditTrail');
+    Route::post('/admin/auditTrailSearch', 'AdminController@auditTrailSearch');
+    Route::get('/viewAudit={userid}', 'AdminController@viewAudit');
 });
 
 // ADMIN ROUTES -- END

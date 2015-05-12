@@ -84,22 +84,24 @@
 </style>
 <script>
     function deleteThisComment(id){
-        if(id != null){
-            $.ajax({
-                type    :   'GET',
-                url     :   '/deleteComment/'+id,
-                success :   function(data){
-                    if(data == 'SUCCESS'){
-                        $('.comment_'+id).fadeOut().remove();
-                    }else{
+        if(confirm('Do you want to delete your comment?')){
+            if(id != null){
+                $.ajax({
+                    type    :   'GET',
+                    url     :   '/deleteComment/'+id,
+                    success :   function(data){
+                        if(data == 'SUCCESS'){
+                            $('.comment_'+id).fadeOut().remove();
+                        }else{
+                            alert('ERROR 500 : Please check network connectivity.');
+                        }
+                    },error :   function(){
                         alert('ERROR 500 : Please check network connectivity.');
                     }
-                },error :   function(){
-                    alert('ERROR 500 : Please check network connectivity.');
-                }
-            });
-        }else{
-            alert('ERROR 500 : Please check network connectivity.');
+                });
+            }else{
+                alert('ERROR 500 : Please check network connectivity.');
+            }
         }
     }
 
@@ -132,8 +134,10 @@
                                 +data['tStamp']+
                                 '</div>' +
                                 '</div>',
-                                container = $('.comment-container');
+                            container = $('.comment-container');
+
                             container.append(newComment);
+//                            $($(this).attr('data-container')).append(newComment);
                             $('[data-locidTarget="'+data['id']+'"]').fadeIn();
 //                            container.scrollTop(container[0].scrollHeight);
                             container.animate({scrollTop: container[0].scrollHeight});
@@ -151,10 +155,10 @@
             $('#image_'+$(this).attr('data-locid')).fadeIn();
         });
 
-        $('.backBtn').click(function(){
-            $('#locations').fadeIn();
-            $('.ALLIMGDIV').hide()
-        });
+//        $('.backBtn').click(function(){
+//            $('#locations').fadeIn();
+//            $('.ALLIMGDIV').hide()
+//        });
 
     })
 </script>
@@ -170,7 +174,7 @@
 
 @foreach($locations as $location)
     <div class="col-md-12 ALLIMGDIV" id="image_{{ $location->id }}" style="display: none;">
-        <div class="col-md-12" style="margin-bottom: 1em;"><i class="fa fa-chevron-circle-left backBtn" style="float: left;"></i><h1 style="text-align: center; color: white">{{ $location->name }}</h1></div>
+        <div class="col-md-12" style="margin-bottom: 1em;"><i class="fa fa-chevron-circle-left backBtn" onclick="location.href=''" style="float: left;"></i><h1 style="text-align: center; color: white">{{ $location->name }}</h1></div>
         <div class="col-md-8" style="padding-right: 0; align-content: center;">
             <div class="links">
                 @foreach(Image::where('location_id', $location->id)->get() as $image)
@@ -197,7 +201,7 @@
             @endif
         </div>
         <div class="col-md-4 comment-panel">
-            <div style="max-height: 30em; overflow-y: auto;" class="comment-container">
+            <div style="max-height: 30em; overflow-y: auto;" class="comment-container" id="container_{{$location->id}}">
                 @foreach(Comment::where('location_id', $location->id)->orderBy('id', 'ASC')->get() as $comment)
                     <div class="comment-item comment_{{$comment->id}}">
                         <div class="comment-header">
@@ -206,7 +210,7 @@
                                 @if(Auth::user()->id == $comment->user_id)
                                     <i class="fa fa-times pull-right" style="color: #BDC3C7; cursor: pointer;" onclick="deleteThisComment('{{ $comment->id }}')"></i>
                                 @endif
-                            @endif    
+                            @endif
                         </div>
                         <div class="comment-content">
                             {{ $comment->content }}
@@ -223,7 +227,7 @@
                     <form class="commentForm_{{$location->id}}" method="POST" action="/postComment/{{ $location->id }}/{{ @Auth::user()->id }}">
                         <textarea name="comment" class="form-control commentContent_{{ $location->id }}" rows="2" placeholder="Say something about {{ $location->name }}.." maxlength="255"></textarea>
                     </form>
-                    <button class="btn btn-danger pull-right postComment-btn" data-form=".commentForm_{{ $location->id }}" data-content=".commentContent_{{ $location->id }}" style="border-radius: 0; margin-top: 0.4em; padding-top: 0.1em; padding-bottom: 0.1em; width: 30%;">Post</button>
+                    <button class="btn btn-danger pull-right postComment-btn" data-container="#container_{{$location->id}}" data-form=".commentForm_{{ $location->id }}" data-content=".commentContent_{{ $location->id }}" style="border-radius: 0; margin-top: 0.4em; padding-top: 0.1em; padding-bottom: 0.1em; width: 30%;">Post</button>
                 </div>
             @else
                 <div class="comment-prompt" style="color: #ffffff; margin-top: 1em;">

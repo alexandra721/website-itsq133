@@ -186,6 +186,12 @@ function scripts_Promotions(){
 }
 
 function scripts_Article(){
+    $('.deleteArticle').click(function(){
+        if(confirm("Do you want to delete this article?")){
+            location.href = '/admin/deleteArticle_'+$(this).attr('data-artid');
+        }
+    });
+
     $('.links').click(function(){
         event = event || window.event;
         var target = event.target || event.srcElement,

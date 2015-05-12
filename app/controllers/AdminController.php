@@ -516,4 +516,27 @@ class AdminController extends \BaseController {
             return View::make('admin.searchUser')->with('users', User::orderBy('username', 'ASC')->paginate(10));
         }
     }
+
+    public function auditTrail(){
+        return View::make('admin.auditTrail')->with('users', User::where('role', 'USER')->paginate(5));
+    }
+
+    public function viewAudit($userid){
+        return View::make('admin.viewAudit')
+            ->with('trails', AuditTrail::where('user_id', $userid)->paginate(10))
+            ->with('user', User::where('id', $userid)->first());
+    }
+
+    public function auditTrailSearch(){
+        $query = User::where('role', 'USER');
+        if(Input::get('searchWord') != '' && Input::get('searchBy') != '0'){
+            $query = $query->where(Input::get('searchBy'), 'LIKE', '%'.Input::get('searchWord').'%');
+        }
+        return View::make('admin.auditTrail')->with('users', $query->paginate(10));
+    }
+
+    public function deleteArticle($artid){
+        Article::where('id', $artid)->delete();
+        return Redirect::back()->with('successMsg', 'Successfully delete article');
+    }
 }

@@ -145,6 +145,7 @@
 <!--                    </li>-->
 
 <!--                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Reports</a></li>-->
+                    <li><a href="/admin/auditTrail"><span class="glyphicon glyphicon-edit"></span> Audit Trail</a></li>
                     <li><a href="/admin/logout"><span class="glyphicon glyphicon-log-out" style="color: firebrick;"></span> Logout</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->

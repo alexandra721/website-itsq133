@@ -68,6 +68,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/database/migrations/2015_05_12_062445_create_audit_trails_table.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/database/seeds/CommentsTableSeeder.php">
           <value>
             <set />
@@ -99,6 +104,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/models/ArticleContent.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/AuditTrail.php">
           <value>
             <set />
           </value>
@@ -158,7 +168,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/adutTrail.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/articles.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/auditTrail.blade.php">
           <value>
             <set />
           </value>
@@ -254,6 +274,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/views/admin/videos.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/viewAudit.blade.php">
           <value>
             <set />
           </value>

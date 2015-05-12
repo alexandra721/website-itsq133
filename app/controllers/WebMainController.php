@@ -70,13 +70,28 @@ class WebMainController extends \BaseController {
     }
 
     public function doLogout(){
+
+        date_default_timezone_set("Asia/Manila");
+        AuditTrail::insert(array(
+            'user_id'   => Auth::user()->id,
+            'content'   => 'Logged out at '.date('D, M j, Y \a\t g:ia'),
+            'created_at'    =>  date('y:m:d h:m:s')
+        ));
         Auth::logout();
 //        return Redirect::to('/');
         return Redirect::back();
     }
 
     public function doLogin(){
+
+        date_default_timezone_set("Asia/Manila");
         if(Auth::attempt(array( 'username' => Input::get('username'), 'password' => Input::get('password') ))){
+            AuditTrail::insert(array(
+                'user_id'   => Auth::user()->id,
+                'content'   => 'Logged in at '.date('D, M j, Y \a\t g:ia'),
+                'created_at'    =>  date('y:m:d h:m:s')
+            ));
+
             if(Auth::user()->role == 'ADMIN'){
                 Auth::logout();
                 return Redirect::back()->with('msg', '<i class="fa fa-warning"></i> Invalid login credentials');
@@ -98,6 +113,8 @@ class WebMainController extends \BaseController {
     }
 
     public function postComment($locid, $userid){
+
+        date_default_timezone_set("Asia/Manila");
         $msg = '';
         $content = '';
         $name = Auth::user()->firstname.' '.Auth::user()->lastname;
@@ -115,6 +132,12 @@ class WebMainController extends \BaseController {
             $msg = 'SUCCESS';
             $content = Input::get('comment');
             $comId = Comment::where('created_at', $tStamp)->where('user_id', $userid)->pluck('id');
+
+            AuditTrail::insert(array(
+                'user_id'   => Auth::user()->id,
+                'content'   => 'Commented at location '.Location::where('id', $locid)->pluck('name').' at '.date('D, M j, Y \a\t g:ia'),
+                'created_at'    =>  date('y:m:d h:m:s')
+            ));
         }else{
             $msg = 'FAILED';
         }

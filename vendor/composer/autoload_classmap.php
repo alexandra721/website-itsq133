@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AdminController' => $baseDir . '/app/controllers/AdminController.php',
     'Article' => $baseDir . '/app/models/Article.php',
+    'ArticleContent' => $baseDir . '/app/models/ArticleContent.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
     'Boris\\CLIOptionsHandler' => $vendorDir . '/d11wtq/boris/lib/Boris/CLIOptionsHandler.php',
@@ -36,6 +37,7 @@ return array(
     'ContentsTableSeeder' => $baseDir . '/app/database/seeds/ContentsTableSeeder.php',
     'CreateArticlecontentsTable' => $baseDir . '/app/database/migrations/2015_04_25_062341_create_articlecontents_table.php',
     'CreateArticlesTable' => $baseDir . '/app/database/migrations/2015_04_25_033110_create_articles_table.php',
+    'CreateAuditTrailsTable' => $baseDir . '/app/database/migrations/2015_05_12_062445_create_audit_trails_table.php',
     'CreateCommentsTable' => $baseDir . '/app/database/migrations/2015_03_25_105803_create_comments_table.php',
     'CreateContentsTable' => $baseDir . '/app/database/migrations/2015_04_04_062727_create_contents_table.php',
     'CreateImagesTable' => $baseDir . '/app/database/migrations/2015_04_01_051523_create_images_table.php',
@@ -1591,6 +1593,7 @@ return array(
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
     'User' => $baseDir . '/app/models/User.php',
     'UserTableSeeder' => $baseDir . '/app/database/seeds/UserTableSeeder.php',
+    'Video' => $baseDir . '/app/models/Video.php',
     'WebMainController' => $baseDir . '/app/controllers/WebMainController.php',
     'Whoops\\Exception\\ErrorException' => $vendorDir . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
     'Whoops\\Exception\\Formatter' => $vendorDir . '/filp/whoops/src/Whoops/Exception/Formatter.php',

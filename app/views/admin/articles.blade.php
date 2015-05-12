@@ -103,7 +103,7 @@
                     <div class="btn-group btnSet1_{{ $article->id }}" role="group" aria-label="...">
                         <button type="button" class="btn btn-default uploadBtn" data-artid="{{ $article->id }}"><i class="glyphicon glyphicon-upload"></i> Upload Image</button>
                         <button type="button" class="btn btn-default editArticle" data-artid="{{ $article->id }}"><i class="glyphicon glyphicon-edit"></i> Edit Article</button>
-                        <button type="button" class="btn btn-danger" data-artid="{{ $article->id }}"><i class="glyphicon glyphicon-remove-circle"></i> Delete</button>
+                        <button type="button" class="btn btn-danger deleteArticle" data-artid="{{ $article->id }}"><i class="glyphicon glyphicon-remove-circle"></i> Delete</button>
                     </div>
                     <div class="btn-group btnSet2_{{ $article->id }}" role="group" aria-label="..." style="display: none;">
                         <button type="button" class="btn btn-danger cancelEdit" data-artid="{{ $article->id }}"><i class="glyphicon glyphicon-edit"></i> Cancel</button>

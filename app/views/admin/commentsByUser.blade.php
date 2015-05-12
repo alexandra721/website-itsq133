@@ -28,19 +28,28 @@
 </div>
 @endif
     @foreach(Location::all() as $loc)
-<!--        <div class="well" style="">-->
-            <h3 style="margin: 0; margin-bottom: 0.4em;">{{ $loc->name }}</h3>
-            @foreach(Comment::where('user_id', $user->id)->get() as $comment)
-            <div class="col-md-12" style="padding: 0.4em; background-color: white; margin-bottom: 0.7em; border: 1px solid #ECF0F1;">
-                <div class="admin-comment-content" style="font-size: 0.8em">
-                    {{ $comment->content }}
-                </div>
-                <div style="border-top: 1px solid #BDC3C7; font-size: 0.8em; margin-top: 0.3em; color: #7F8C8D; padding-top: 0.4em;">
-                    <i class="fa fa-clock-o" style="color: #2980B9;"></i> {{ $comment->created_at }}
-                    <a class="deleteComment" data-href="/admin/deleteComment/{{ $comment->id }}" style="cursor: pointer;"><i class="fa fa-trash pull-right"></i></a>
-                </div>
+        <div class="panel panel-primary">
+            <div class="panel panel-heading" style="margin: 0;">{{ $loc->name }}</div>
+            <div class="panel panel-body" style="background-color: #ECF0F1; margin: 0;">
+                <?php $comments = Comment::where('user_id', $user->id)->where('location_id', $loc->id)->paginate(5) ?>
+                @if($comments->count() == 0)
+                    <center><i>No available data.</i></center>
+                @endif
+                @foreach($comments as $comment)
+                    <div class="col-md-12" style="padding: 0.4em; background-color: white; margin-bottom: 0.7em; border: 1px solid #ECF0F1;">
+                        <div class="admin-comment-content" style="font-size: 0.8em">
+                            {{ $comment->content }}
+                        </div>
+                        <div style="border-top: 1px solid #BDC3C7; font-size: 0.8em; margin-top: 0.3em; color: #7F8C8D; padding-top: 0.4em;">
+                            <i class="fa fa-clock-o" style="color: #2980B9;"></i> {{ $comment->created_at }}
+                            <a class="deleteComment" data-href="/admin/deleteComment/{{ $comment->id }}" style="cursor: pointer;"><i class="fa fa-trash pull-right"></i></a>
+                        </div>
+                    </div>
+                @endforeach
+
+                <center>{{ $comments->links() }}</center>
             </div>
-            @endforeach
+        </div>
         <!--</div>-->
     @endforeach
 @stop
