@@ -539,4 +539,25 @@ class AdminController extends \BaseController {
         Article::where('id', $artid)->delete();
         return Redirect::back()->with('successMsg', 'Successfully delete article');
     }
+
+    public function searchAudit1Date($date, $userid){
+        if($date == 0){
+            return Redirect::to('/viewAudit='.$userid);
+        }
+
+//        dd(Input::all());
+        return View::make('admin.viewAuditSearch')
+                ->with('trails', AuditTrail::where(DB::raw('DATE(created_at)'), $date)->where('user_id', $userid)->paginate(10))
+                ->with('user', User::where('id', $userid)->first());
+    }
+
+    public function searchAudit2Date($date1, $date2, $userid){
+        if($date1 == 0 || $date2 == 0){
+            return Redirect::to('/viewAudit='.Input::get('userId'));
+        }
+
+        return View::make('admin.viewAuditSearch')
+            ->with('trails', AuditTrail::whereBetween(DB::raw('DATE(created_at)'), array($date1, $date2))->where('user_id', $userid)->paginate(10))
+            ->with('user', User::where('id', $userid)->first());
+    }
 }

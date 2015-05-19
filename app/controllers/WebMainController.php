@@ -1,6 +1,10 @@
 <?php
 
 class WebMainController extends \BaseController {
+    function emailValidate($email){
+        return preg_match('/^(([^<>()[\]\\.,;:\s@"\']+(\.[^<>()[\]\\.,;:\s@"\']+)*)|("[^"\']+"))@((\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\])|(([a-zA-Z\d\-]+\.)+[a-zA-Z]{2,}))$/', $email);
+    }
+
     public function index(){
         return View::make('website.index')->with('homeslogans', Content::where('type', 'homeslogan')->get())->with('articles', Article::orderBy(DB::raw('RAND()'))->get());
     }
@@ -154,5 +158,57 @@ class WebMainController extends \BaseController {
     public function deleteComment($id){
         Comment::where('id', $id)->delete();
         return 'SUCCESS';
+    }
+
+    public function changePass(){
+        if(!Auth::attempt(array('username' => Auth::user()->username, 'password' =>  Input::get('oldPass')))){
+            return View::make('confirmPage')->with('errorMsg', 'The old password is incorrect');
+        }
+
+        if(!ctype_alnum(Input::get('newPass'))){
+            return View::make('confirmPage')->with('errorMsg', 'Password is alphanumeric only');
+        }else if(Input::get('newPass') != Input::get('newPassConfirm')){
+            return View::make('confirmPage')->with('errorMsg', 'Passwords does not match');
+        }
+
+        User::where('id', Auth::user()->id)->update(array(
+            'password'  =>  Hash::make(Input::get('newPass'))
+        ));
+
+        date_default_timezone_set("Asia/Manila");
+        AuditTrail::insert(array(
+            'user_id'   =>  Auth::user()->id,
+            'content'   =>  'Changed password at '.date('D, M j, Y \a\t g:ia'),
+            'created_at'    =>  date('y:m:d h:m:s')
+        ));
+
+        return View::make('confirmPage')->with('successMsg', 'Your password has been successfully changed');
+    }
+
+    public function changeEmail(){
+        if($this->emailValidate(Input::get('oldEmail')) == 0){
+            return View::make('confirmPage')->with('errorMsg', 'Please enter your old valid email');
+        }
+
+        if($this->emailValidate(Input::get('newEmail')) == 0){
+            return View::make('confirmPage')->with('errorMsg', 'Please enter a valid new email');
+        }else if(Input::get('newEmail') != Input::get('newEmailConfirm')){
+            return View::make('confirmPage')->with('errorMsg', 'Email confirmation does not match');
+        }else if(User::where('email', Input::get('newEmail'))->count() > 0){
+            return View::make('confirmPage')->with('errorMsg', 'Email is already taken');
+        }
+
+        User::where('id', Auth::user()->id)->update(array(
+            'email'  =>  Input::get('newEmail')
+        ));
+
+        date_default_timezone_set("Asia/Manila");
+        AuditTrail::insert(array(
+            'user_id'   =>  Auth::user()->id,
+            'content'   =>  'Changed email from '.Input::get('oldEmail').' to '. Input::get('newEmail') .'at '.date('D, M j, Y \a\t g:ia'),
+            'created_at'    =>  date('y:m:d h:m:s')
+        ));
+
+        return View::make('confirmPage')->with('successMsg', 'Your email has been successfully changed');
     }
 }

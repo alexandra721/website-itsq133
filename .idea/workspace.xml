@@ -7,16 +7,14 @@
     <list default="true" id="dbe703e6-6613-4f03-9513-b37af6a087c2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/controllers/AdminController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/WebMainController.php" afterPath="$PROJECT_DIR$/app/controllers/WebMainController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/articles.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/articles.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/commentsByUser.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/commentsByUser.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/custom.js" afterPath="$PROJECT_DIR$/public/js/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/website/gallery.blade.php" afterPath="$PROJECT_DIR$/app/views/website/gallery.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/layouts/master.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/layouts/master.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/website/layouts/master.blade.php" afterPath="$PROJECT_DIR$/app/views/website/layouts/master.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/viewAudit.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/viewAudit.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="website-itsq133.iws" />
@@ -43,52 +41,33 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="77" selection-start="3626" selection-end="3639" vertical-scroll-proportion="-4.8235292" vertical-offset="874" max-vertical-offset="1712">
+            <state line="104" column="24" selection-start="5686" selection-end="5686" vertical-scroll-proportion="-23.52" vertical-offset="1076" max-vertical-offset="1792">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auditTrail.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/auditTrail.blade.php">
+      <file leaf-file-name="viewAudit.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/viewAudit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="6" selection-start="2935" selection-end="2935" vertical-scroll-proportion="-18.4" vertical-offset="996" max-vertical-offset="1712">
+            <state line="110" column="10" selection-start="3232" selection-end="3232" vertical-scroll-proportion="-22.24" vertical-offset="1204" max-vertical-offset="2768">
               <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#3;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="articles.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/articles.blade.php">
+      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/layouts/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="83" selection-start="5370" selection-end="5380" vertical-scroll-proportion="-4.4117646" vertical-offset="1439" max-vertical-offset="2768">
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="190" column="79" selection-start="7698" selection-end="7698" vertical-scroll-proportion="0.0" vertical-offset="2750" max-vertical-offset="5968">
-              <folding>
-                <marker date="1431419937056" expanded="false" signature="398:412" placeholder="..." />
-                <marker date="1431419937056" expanded="false" signature="1118:1132" placeholder="..." />
-                <marker date="1431419937056" expanded="false" signature="2360:2374" placeholder="..." />
-                <marker date="1431419937056" expanded="false" signature="2737:2747" placeholder="..." />
-                <marker date="1431419937056" expanded="false" signature="2915:2925" placeholder="..." />
-                <marker date="1431419937056" expanded="false" signature="3136:3146" placeholder="..." />
-                <marker date="1431419937056" expanded="false" signature="3356:3366" placeholder="..." />
-                <marker date="1431419937056" expanded="false" signature="3892:3904" placeholder="..." />
-                <marker date="1431419937056" expanded="false" signature="4140:4151" placeholder="..." />
-              </folding>
+            <state line="18" column="44" selection-start="685" selection-end="685" vertical-scroll-proportion="53.76" vertical-offset="1632" max-vertical-offset="2928">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,19 +75,13 @@
       <file leaf-file-name="AdminController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="539" column="83" selection-start="22471" selection-end="22471" vertical-scroll-proportion="0.9054653" vertical-offset="1403" max-vertical-offset="2160">
+            <state line="557" column="0" selection-start="23090" selection-end="23090" vertical-scroll-proportion="0.81449276" vertical-offset="1726" max-vertical-offset="2480">
               <folding>
-                <element signature="e#334#395#0" expanded="false" />
+                <element signature="n#index#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#doLogin#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="e#454#573#0" expanded="false" />
-                <element signature="e#584#1232#0" expanded="false" />
-                <element signature="e#626#1046#0" expanded="false" />
-                <element signature="e#834#1046#0" expanded="false" />
-                <element signature="e#1098#1232#0" expanded="false" />
                 <element signature="n#home#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#logout#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="n#users#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="n#deactivate#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#activate#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#profile#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#changepass#0;n#AdminController#0;n#!!top" expanded="false" />
@@ -116,44 +89,33 @@
                 <element signature="n#images#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#videos#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#upload#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#3275#4645#0" expanded="false" />
                 <element signature="e#3306#4492#0" expanded="false" />
-                <element signature="e#3584#4478#0" expanded="false" />
                 <element signature="e#3922#4253#0" expanded="false" />
                 <element signature="e#3936#4252#1" expanded="false" />
-                <element signature="e#4289#4478#0" expanded="false" />
-                <element signature="e#4502#4645#0" expanded="false" />
                 <element signature="n#aboutus#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#homeManage#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#contactus#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#updateAboutus#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#5194#5729#0" expanded="false" />
                 <element signature="e#5308#5555#0" expanded="false" />
                 <element signature="e#5364#5540#0" expanded="false" />
                 <element signature="e#5380#5539#1" expanded="false" />
-                <element signature="e#5565#5729#0" expanded="false" />
                 <element signature="e#5583#5718#0" expanded="false" />
                 <element signature="e#5599#5717#1" expanded="false" />
-                <element signature="n#deleteAboutus#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#general#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="e#6128#6338#0" expanded="false" />
                 <element signature="n#updateSlogan#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#6443#6973#0" expanded="false" />
                 <element signature="e#6555#6801#0" expanded="false" />
                 <element signature="e#6611#6786#0" expanded="false" />
                 <element signature="e#6627#6785#1" expanded="false" />
-                <element signature="e#6811#6973#0" expanded="false" />
                 <element signature="e#6829#6962#0" expanded="false" />
                 <element signature="e#6845#6961#1" expanded="false" />
                 <element signature="e#6990#7205#0" expanded="false" />
                 <element signature="e#6990#7329#0" expanded="false" />
                 <element signature="e#6990#7405#0" expanded="false" />
                 <element signature="n#updateHomeslogan#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#7518#8068#0" expanded="false" />
                 <element signature="e#7638#7888#0" expanded="false" />
                 <element signature="e#7694#7873#0" expanded="false" />
                 <element signature="e#7710#7872#1" expanded="false" />
-                <element signature="e#7898#8068#0" expanded="false" />
                 <element signature="e#7916#8057#0" expanded="false" />
                 <element signature="e#7932#8056#1" expanded="false" />
                 <element signature="e#8085#8280#0" expanded="false" />
@@ -162,58 +124,36 @@
                 <element signature="n#deleteSlogan#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#deleteHomeslogan#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#previewAboutus#0;n#AdminController#0;n#!!top" expanded="false" />
+                <element signature="n#promotions#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#addLocation#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#9474#10096#0" expanded="false" />
-                <element signature="e#9630#10096#0" expanded="false" />
-                <element signature="e#9795#10096#0" expanded="false" />
                 <element signature="e#9813#10001#0" expanded="false" />
                 <element signature="e#9830#10000#1" expanded="false" />
-                <element signature="n#editLocation#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#10173#10901#0" expanded="false" />
-                <element signature="e#10340#10901#0" expanded="false" />
-                <element signature="e#10548#10901#0" expanded="false" />
                 <element signature="e#10566#10805#0" expanded="false" />
                 <element signature="e#10622#10804#1" expanded="false" />
                 <element signature="e#10918#10994#0" expanded="false" />
+                <element signature="n#article#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#addArticle#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#11270#12686#0" expanded="false" />
-                <element signature="e#11428#12686#0" expanded="false" />
-                <element signature="e#11627#12686#0" expanded="false" />
                 <element signature="e#11645#11802#0" expanded="false" />
                 <element signature="e#11661#11801#1" expanded="false" />
-                <element signature="e#11952#12595#0" expanded="false" />
                 <element signature="e#12088#12375#0" expanded="false" />
-                <element signature="e#12389#12595#0" expanded="false" />
                 <element signature="e#12411#12580#0" expanded="false" />
-                <element signature="e#12696#12855#0" expanded="false" />
-                <element signature="e#12779#12855#0" expanded="false" />
                 <element signature="n#deleteLocation#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#editArticle#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#13347#14779#0" expanded="false" />
-                <element signature="e#13505#14779#0" expanded="false" />
-                <element signature="e#13704#14779#0" expanded="false" />
                 <element signature="e#13722#13872#0" expanded="false" />
                 <element signature="e#13776#13871#1" expanded="false" />
-                <element signature="e#14015#14684#0" expanded="false" />
                 <element signature="e#14151#14451#0" expanded="false" />
-                <element signature="e#14465#14684#0" expanded="false" />
                 <element signature="e#14487#14669#0" expanded="false" />
                 <element signature="e#14796#14872#0" expanded="false" />
                 <element signature="n#uploadArticleImage#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#14979#16529#0" expanded="false" />
                 <element signature="e#15010#16363#0" expanded="false" />
-                <element signature="e#15288#16349#0" expanded="false" />
                 <element signature="e#15634#15972#0" expanded="false" />
                 <element signature="e#15648#15971#1" expanded="false" />
                 <element signature="e#15995#16124#0" expanded="false" />
                 <element signature="e#16029#16123#1" expanded="false" />
-                <element signature="e#16160#16349#0" expanded="false" />
-                <element signature="e#16373#16529#0" expanded="false" />
                 <element signature="n#addVideo#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="e#16752#16935#0" expanded="false" />
                 <element signature="e#16766#16934#1" expanded="false" />
                 <element signature="n#addVideoFile#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#17103#17254#0" expanded="false" />
                 <element signature="e#17435#17712#0" expanded="false" />
                 <element signature="e#17449#17711#1" expanded="false" />
                 <element signature="n#manageMedia#0;n#AdminController#0;n#!!top" expanded="false" />
@@ -223,110 +163,40 @@
                 <element signature="n#deleteImage#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#deleteVid#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#deleteComment#0;n#AdminController#0;n#!!top" expanded="false" />
+                <element signature="n#viewUserComments#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#bgImage#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#uploadBgImg#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#19014#20613#0" expanded="false" />
                 <element signature="e#19033#19072#0" expanded="false" />
                 <element signature="e#19302#20490#0" expanded="false" />
-                <element signature="e#19656#20476#0" expanded="false" />
                 <element signature="e#20022#20310#0" expanded="false" />
                 <element signature="e#20036#20309#1" expanded="false" />
-                <element signature="e#20346#20476#0" expanded="false" />
-                <element signature="e#20500#20613#0" expanded="false" />
                 <element signature="n#manageBgImg#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#searchUsers#0;n#AdminController#0;n#!!top" expanded="false" />
                 <element signature="n#doSearchUsers#0;n#AdminController#0;n#!!top" expanded="false" />
-                <element signature="e#20980#21539#0" expanded="false" />
-                <element signature="e#21315#21539#0" expanded="false" />
-                <marker date="1431420007047" expanded="false" signature="765:779" placeholder="..." />
-                <marker date="1431420007047" expanded="false" signature="979:993" placeholder="..." />
-                <marker date="1431420007047" expanded="false" signature="1172:1186" placeholder="..." />
+                <element signature="n#viewAudit#0;n#AdminController#0;n#!!top" expanded="false" />
+                <element signature="e#21747#21858#0" expanded="false" />
+                <element signature="e#21747#21922#0" expanded="false" />
+                <element signature="n#deleteArticle#0;n#AdminController#0;n#!!top" expanded="false" />
+                <marker date="1432008886992" expanded="true" signature="765:779" placeholder="..." />
+                <marker date="1432008886992" expanded="true" signature="979:993" placeholder="..." />
+                <marker date="1432008886992" expanded="true" signature="1172:1186" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="commentsByUser.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/commentsByUser.blade.php">
+      <file leaf-file-name="viewAuditSearch.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/viewAuditSearch.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="26" selection-start="489" selection-end="489" vertical-scroll-proportion="-5.0588236" vertical-offset="14" max-vertical-offset="992">
+            <state line="167" column="5" selection-start="5685" selection-end="5685" vertical-scroll-proportion="-11.6470585" vertical-offset="2078" max-vertical-offset="2768">
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gallery.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/website/gallery.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="129" selection-start="5606" selection-end="5606" vertical-scroll-proportion="7.509804" vertical-offset="3199" max-vertical-offset="3952">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <marker date="1431419234844" expanded="false" signature="3365:3379" placeholder="..." />
-                <marker date="1431419234844" expanded="false" signature="3838:3853" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viewAudit.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/viewAudit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="27" selection-start="2598" selection-end="2598" vertical-scroll-proportion="-24.16" vertical-offset="772" max-vertical-offset="1504">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#3;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebMainController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/WebMainController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="30" selection-start="5797" selection-end="5797" vertical-scroll-proportion="-8.176471" vertical-offset="1135" max-vertical-offset="1824">
-              <folding>
-                <element signature="n#index#0;n#WebMainController#0;n#!!top" expanded="false" />
-                <element signature="n#about#0;n#WebMainController#0;n#!!top" expanded="false" />
-                <element signature="n#contactus#0;n#WebMainController#0;n#!!top" expanded="false" />
-                <element signature="n#register#0;n#WebMainController#0;n#!!top" expanded="false" />
-                <element signature="n#login#0;n#WebMainController#0;n#!!top" expanded="false" />
-                <element signature="e#1019#1461#0" expanded="false" />
-                <element signature="e#1176#1461#0" expanded="false" />
-                <element signature="e#1314#1461#0" expanded="false" />
-                <element signature="e#1539#2064#0" expanded="false" />
-                <element signature="e#1725#2064#0" expanded="false" />
-                <element signature="e#1917#2064#0" expanded="false" />
-                <element signature="e#2139#2592#0" expanded="false" />
-                <element signature="e#2152#2591#1" expanded="false" />
-                <element signature="e#2607#2753#0" expanded="false" />
-                <element signature="e#2621#2752#1" expanded="false" />
-                <element signature="e#2780#2830#0" expanded="false" />
-                <element signature="e#3680#4234#0" expanded="false" />
-                <element signature="e#3873#4234#0" expanded="false" />
-                <element signature="e#3895#4220#0" expanded="false" />
-                <element signature="e#4147#4220#0" expanded="false" />
-                <element signature="e#4244#4368#0" expanded="false" />
-                <element signature="n#getArticle#0;n#WebMainController#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/layouts/master.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="40" selection-start="8229" selection-end="8239" vertical-scroll-proportion="-6.88" vertical-offset="2180" max-vertical-offset="2896">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -344,9 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/website/register.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/home.blade.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_04_25_033224_create_locations_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_04_25_033110_create_articles_table.php" />
         <option value="$PROJECT_DIR$/app/models/ArticleContent.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_04_25_062341_create_articlecontents_table.php" />
@@ -366,7 +233,6 @@
         <option value="$PROJECT_DIR$/app/views/Route500.blade.php" />
         <option value="$PROJECT_DIR$/public/css/custom.css" />
         <option value="$PROJECT_DIR$/public/css/website-custom.css" />
-        <option value="$PROJECT_DIR$/app/views/website/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/app/filters.php" />
         <option value="$PROJECT_DIR$/app/models/Video.php" />
         <option value="$PROJECT_DIR$/app/views/admin/videos.blade.php" />
@@ -384,16 +250,20 @@
         <option value="$PROJECT_DIR$/app/views/admin/profile.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_05_12_062445_create_audit_trails_table.php" />
         <option value="$PROJECT_DIR$/app/models/AuditTrail.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/adutTrail.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/auditTrail.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/WebMainController.php" />
         <option value="$PROJECT_DIR$/app/views/website/gallery.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/viewAudit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/commentsByUser.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/articles.blade.php" />
         <option value="$PROJECT_DIR$/public/js/custom.js" />
+        <option value="$PROJECT_DIR$/app/views/confimPage.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/confirmPage.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/website/layouts/master.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/WebMainController.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/viewAudit.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/viewAuditSearch.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/AdminController.php" />
       </list>
     </option>
@@ -501,64 +371,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website-itsq133" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website-itsq133" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website-itsq133" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website-itsq133" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website-itsq133" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website-itsq133" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -613,11 +425,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -637,21 +449,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/blueimp-gallery-indicator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.854251" vertical-offset="1374" max-vertical-offset="2385" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/blueimp-gallery-fullscreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.95951414" vertical-offset="159" max-vertical-offset="1440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_03_25_105803_create_comments_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="39" selection-start="434" selection-end="434" vertical-scroll-proportion="0.35564855" vertical-offset="0" max-vertical-offset="717" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="44" selection-start="657" selection-end="657" vertical-scroll-proportion="0.46025103" vertical-offset="0" max-vertical-offset="717" />
@@ -692,29 +489,14 @@
         <state line="27" column="12" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.56485355" vertical-offset="0" max-vertical-offset="717" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Route404.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="0" selection-end="1253" vertical-scroll-proportion="0.12552302" vertical-offset="0" max-vertical-offset="717" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="23" selection-start="599" selection-end="599" vertical-scroll-proportion="0.60728747" vertical-offset="0" max-vertical-offset="5865" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/filters.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="9" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0" vertical-offset="1086" max-vertical-offset="1980" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/website/layouts/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="6027" selection-end="6027" vertical-scroll-proportion="-6.25" vertical-offset="1500" max-vertical-offset="2565" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/images.blade.php">
@@ -791,216 +573,234 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="123" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="544">
-          <folding />
-        </state>
+        <state line="9" column="123" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="544" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/website/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="1616">
-          <folding />
-        </state>
+        <state line="6" column="13" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="1616" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/promotions.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="49" selection-start="1477" selection-end="1709" vertical-scroll-proportion="0.0" vertical-offset="656" max-vertical-offset="3792">
-          <folding />
-        </state>
+        <state line="51" column="49" selection-start="1477" selection-end="1709" vertical-scroll-proportion="0.0" vertical-offset="656" max-vertical-offset="3792" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/searchUser.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="29" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.56899005" vertical-offset="128" max-vertical-offset="1552">
-          <folding />
-        </state>
+        <state line="33" column="29" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.56899005" vertical-offset="128" max-vertical-offset="1552" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="60" selection-start="329" selection-end="389" vertical-scroll-proportion="0.47795165" vertical-offset="0" max-vertical-offset="2224">
-          <folding />
-        </state>
+        <state line="21" column="60" selection-start="329" selection-end="389" vertical-scroll-proportion="0.47795165" vertical-offset="0" max-vertical-offset="2224" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_05_12_062445_create_audit_trails_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="9" selection-start="289" selection-end="289" vertical-scroll-proportion="0.31284916" vertical-offset="0" max-vertical-offset="716">
-          <folding />
-        </state>
+        <state line="15" column="9" selection-start="289" selection-end="289" vertical-scroll-proportion="0.31284916" vertical-offset="0" max-vertical-offset="716" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/AuditTrail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="38" selection-start="81" selection-end="81" vertical-scroll-proportion="0.06703911" vertical-offset="0" max-vertical-offset="716">
-          <folding />
-        </state>
+        <state line="3" column="38" selection-start="81" selection-end="81" vertical-scroll-proportion="0.06703911" vertical-offset="0" max-vertical-offset="716" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/manageBgImg.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="31" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.44950214" vertical-offset="196" max-vertical-offset="912">
-          <folding />
-        </state>
+        <state line="32" column="31" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.44950214" vertical-offset="196" max-vertical-offset="912" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/users.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="9" selection-start="228" selection-end="2928" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="1744">
-          <folding />
-        </state>
+        <state line="10" column="9" selection-start="228" selection-end="2928" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="1744" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/bgImage.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="114" selection-start="3679" selection-end="3679" vertical-scroll-proportion="0.6315789" vertical-offset="1092" max-vertical-offset="1808">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/layouts/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="40" selection-start="8229" selection-end="8239" vertical-scroll-proportion="-6.88" vertical-offset="2180" max-vertical-offset="2896">
-          <folding />
-        </state>
+        <state line="96" column="114" selection-start="3679" selection-end="3679" vertical-scroll-proportion="0.6315789" vertical-offset="1092" max-vertical-offset="1808" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/comments.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="29" selection-start="150" selection-end="152" vertical-scroll-proportion="0.11594203" vertical-offset="0" max-vertical-offset="1584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/auditTrail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="6" selection-start="2935" selection-end="2935" vertical-scroll-proportion="-18.4" vertical-offset="996" max-vertical-offset="1712">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#3;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/WebMainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="30" selection-start="5797" selection-end="5797" vertical-scroll-proportion="-8.176471" vertical-offset="1135" max-vertical-offset="1824">
-          <folding>
-            <element signature="n#index#0;n#WebMainController#0;n#!!top" expanded="false" />
-            <element signature="n#about#0;n#WebMainController#0;n#!!top" expanded="false" />
-            <element signature="n#contactus#0;n#WebMainController#0;n#!!top" expanded="false" />
-            <element signature="n#register#0;n#WebMainController#0;n#!!top" expanded="false" />
-            <element signature="n#login#0;n#WebMainController#0;n#!!top" expanded="false" />
-            <element signature="e#1019#1461#0" expanded="false" />
-            <element signature="e#1176#1461#0" expanded="false" />
-            <element signature="e#1314#1461#0" expanded="false" />
-            <element signature="e#1539#2064#0" expanded="false" />
-            <element signature="e#1725#2064#0" expanded="false" />
-            <element signature="e#1917#2064#0" expanded="false" />
-            <element signature="e#2139#2592#0" expanded="false" />
-            <element signature="e#2152#2591#1" expanded="false" />
-            <element signature="e#2607#2753#0" expanded="false" />
-            <element signature="e#2621#2752#1" expanded="false" />
-            <element signature="e#2780#2830#0" expanded="false" />
-            <element signature="e#3680#4234#0" expanded="false" />
-            <element signature="e#3873#4234#0" expanded="false" />
-            <element signature="e#3895#4220#0" expanded="false" />
-            <element signature="e#4147#4220#0" expanded="false" />
-            <element signature="e#4244#4368#0" expanded="false" />
-            <element signature="n#getArticle#0;n#WebMainController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
+        <state line="5" column="29" selection-start="150" selection-end="152" vertical-scroll-proportion="0.11594203" vertical-offset="0" max-vertical-offset="1584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/website/gallery.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="129" selection-start="5606" selection-end="5606" vertical-scroll-proportion="7.509804" vertical-offset="3199" max-vertical-offset="3952">
+        <state line="176" column="129" selection-start="5606" selection-end="5606" vertical-scroll-proportion="0.0" vertical-offset="3199" max-vertical-offset="3952">
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1431419234844" expanded="false" signature="3365:3379" placeholder="..." />
-            <marker date="1431419234844" expanded="false" signature="3838:3853" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/viewAudit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="27" selection-start="2598" selection-end="2598" vertical-scroll-proportion="-24.16" vertical-offset="772" max-vertical-offset="1504">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/commentsByUser.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="26" selection-start="489" selection-end="489" vertical-scroll-proportion="-5.0588236" vertical-offset="14" max-vertical-offset="992">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/articles.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="83" selection-start="5370" selection-end="5380" vertical-scroll-proportion="-4.4117646" vertical-offset="1439" max-vertical-offset="2768">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <marker date="1431419234844" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431419234844" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="190" column="79" selection-start="7698" selection-end="7698" vertical-scroll-proportion="0.0" vertical-offset="2750" max-vertical-offset="5968">
+        <state line="190" column="79" selection-start="7698" selection-end="7698" vertical-scroll-proportion="0.39835164" vertical-offset="2750" max-vertical-offset="5968">
           <folding>
-            <marker date="1431419937056" expanded="false" signature="398:412" placeholder="..." />
-            <marker date="1431419937056" expanded="false" signature="1118:1132" placeholder="..." />
-            <marker date="1431419937056" expanded="false" signature="2360:2374" placeholder="..." />
-            <marker date="1431419937056" expanded="false" signature="2737:2747" placeholder="..." />
-            <marker date="1431419937056" expanded="false" signature="2915:2925" placeholder="..." />
-            <marker date="1431419937056" expanded="false" signature="3136:3146" placeholder="..." />
-            <marker date="1431419937056" expanded="false" signature="3356:3366" placeholder="..." />
-            <marker date="1431419937056" expanded="false" signature="3892:3904" placeholder="..." />
-            <marker date="1431419937056" expanded="false" signature="4140:4151" placeholder="..." />
+            <marker date="1431419937056" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431419937056" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431419937056" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431419937056" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431419937056" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431419937056" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431419937056" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431419937056" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431419937056" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="716">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/confirmPage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="18" selection-start="762" selection-end="762" vertical-scroll-proportion="0.5363129" vertical-offset="0" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/website/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="31" selection-start="8102" selection-end="8102" vertical-scroll-proportion="0.38691324" vertical-offset="1840" max-vertical-offset="2736">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/WebMainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="208" column="51" selection-start="8503" selection-end="8503" vertical-scroll-proportion="0.71639585" vertical-offset="1355" max-vertical-offset="2032">
+          <folding>
+            <element signature="n#index#0;n#WebMainController#0;n#!!top" expanded="false" />
+            <element signature="n#gallery#0;n#WebMainController#0;n#!!top" expanded="false" />
+            <element signature="n#about#0;n#WebMainController#0;n#!!top" expanded="false" />
+            <element signature="n#contactus#0;n#WebMainController#0;n#!!top" expanded="false" />
+            <element signature="n#login#0;n#WebMainController#0;n#!!top" expanded="false" />
+            <element signature="e#1248#1690#0" expanded="false" />
+            <element signature="e#1405#1690#0" expanded="false" />
+            <element signature="e#1543#1690#0" expanded="false" />
+            <element signature="e#1768#2293#0" expanded="false" />
+            <element signature="e#1954#2293#0" expanded="false" />
+            <element signature="e#2146#2293#0" expanded="false" />
+            <element signature="e#2836#2982#0" expanded="false" />
+            <element signature="e#2850#2981#1" expanded="false" />
+            <element signature="e#3009#3059#0" expanded="false" />
+            <element signature="n#doLogin#0;n#WebMainController#0;n#!!top" expanded="false" />
+            <element signature="e#3557#4597#0" expanded="false" />
+            <element signature="e#3673#3894#0" expanded="false" />
+            <element signature="e#3692#3893#1" expanded="false" />
+            <element signature="e#3909#4463#0" expanded="false" />
+            <element signature="e#4102#4463#0" expanded="false" />
+            <element signature="e#4124#4449#0" expanded="false" />
+            <element signature="e#4376#4449#0" expanded="false" />
+            <element signature="e#4473#4597#0" expanded="false" />
+            <element signature="n#getArticle#0;n#WebMainController#0;n#!!top" expanded="false" />
+            <element signature="n#postComment#0;n#WebMainController#0;n#!!top" expanded="false" />
+            <element signature="e#5029#5910#0" expanded="false" />
+            <element signature="e#5099#5382#0" expanded="false" />
+            <element signature="e#5115#5381#1" expanded="false" />
+            <element signature="e#5573#5855#0" expanded="false" />
+            <element signature="e#5592#5854#1" expanded="false" />
+            <element signature="e#5866#5910#0" expanded="false" />
+            <element signature="e#5927#6110#0" expanded="false" />
+            <element signature="n#deleteComment#0;n#WebMainController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/commentsByUser.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="26" selection-start="489" selection-end="489" vertical-scroll-proportion="0.3603352" vertical-offset="14" max-vertical-offset="992">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/articles.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="83" selection-start="5370" selection-end="5380" vertical-scroll-proportion="0.0" vertical-offset="1680" max-vertical-offset="2784">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Route404.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="7" selection-start="1253" selection-end="1253" vertical-scroll-proportion="0.73743016" vertical-offset="0" max-vertical-offset="716">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/UserTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="992">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/auditTrail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="11" selection-start="2928" selection-end="2928" vertical-scroll-proportion="0.66714084" vertical-offset="971" max-vertical-offset="1712">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="77" selection-start="3626" selection-end="3639" vertical-scroll-proportion="-4.8235292" vertical-offset="874" max-vertical-offset="1712">
+        <state line="104" column="24" selection-start="5686" selection-end="5686" vertical-scroll-proportion="-23.52" vertical-offset="1076" max-vertical-offset="1792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/viewAuditSearch.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="5" selection-start="5685" selection-end="5685" vertical-scroll-proportion="-11.6470585" vertical-offset="2078" max-vertical-offset="2768">
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/viewAudit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="10" selection-start="3232" selection-end="3232" vertical-scroll-proportion="-22.24" vertical-offset="1204" max-vertical-offset="2768">
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="44" selection-start="685" selection-end="685" vertical-scroll-proportion="53.76" vertical-offset="1632" max-vertical-offset="2928">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="539" column="83" selection-start="22471" selection-end="22471" vertical-scroll-proportion="0.9054653" vertical-offset="1403" max-vertical-offset="2160">
+        <state line="557" column="0" selection-start="23090" selection-end="23090" vertical-scroll-proportion="0.81449276" vertical-offset="1726" max-vertical-offset="2480">
           <folding>
-            <element signature="e#334#395#0" expanded="false" />
+            <element signature="n#index#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#doLogin#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="e#454#573#0" expanded="false" />
-            <element signature="e#584#1232#0" expanded="false" />
-            <element signature="e#626#1046#0" expanded="false" />
-            <element signature="e#834#1046#0" expanded="false" />
-            <element signature="e#1098#1232#0" expanded="false" />
             <element signature="n#home#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#logout#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#users#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#deactivate#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#activate#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#profile#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#changepass#0;n#AdminController#0;n#!!top" expanded="false" />
@@ -1008,44 +808,33 @@
             <element signature="n#images#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#videos#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#upload#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#3275#4645#0" expanded="false" />
             <element signature="e#3306#4492#0" expanded="false" />
-            <element signature="e#3584#4478#0" expanded="false" />
             <element signature="e#3922#4253#0" expanded="false" />
             <element signature="e#3936#4252#1" expanded="false" />
-            <element signature="e#4289#4478#0" expanded="false" />
-            <element signature="e#4502#4645#0" expanded="false" />
             <element signature="n#aboutus#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#homeManage#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#contactus#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#updateAboutus#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#5194#5729#0" expanded="false" />
             <element signature="e#5308#5555#0" expanded="false" />
             <element signature="e#5364#5540#0" expanded="false" />
             <element signature="e#5380#5539#1" expanded="false" />
-            <element signature="e#5565#5729#0" expanded="false" />
             <element signature="e#5583#5718#0" expanded="false" />
             <element signature="e#5599#5717#1" expanded="false" />
-            <element signature="n#deleteAboutus#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#general#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="e#6128#6338#0" expanded="false" />
             <element signature="n#updateSlogan#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#6443#6973#0" expanded="false" />
             <element signature="e#6555#6801#0" expanded="false" />
             <element signature="e#6611#6786#0" expanded="false" />
             <element signature="e#6627#6785#1" expanded="false" />
-            <element signature="e#6811#6973#0" expanded="false" />
             <element signature="e#6829#6962#0" expanded="false" />
             <element signature="e#6845#6961#1" expanded="false" />
             <element signature="e#6990#7205#0" expanded="false" />
             <element signature="e#6990#7329#0" expanded="false" />
             <element signature="e#6990#7405#0" expanded="false" />
             <element signature="n#updateHomeslogan#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#7518#8068#0" expanded="false" />
             <element signature="e#7638#7888#0" expanded="false" />
             <element signature="e#7694#7873#0" expanded="false" />
             <element signature="e#7710#7872#1" expanded="false" />
-            <element signature="e#7898#8068#0" expanded="false" />
             <element signature="e#7916#8057#0" expanded="false" />
             <element signature="e#7932#8056#1" expanded="false" />
             <element signature="e#8085#8280#0" expanded="false" />
@@ -1054,58 +843,36 @@
             <element signature="n#deleteSlogan#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#deleteHomeslogan#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#previewAboutus#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#promotions#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#addLocation#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#9474#10096#0" expanded="false" />
-            <element signature="e#9630#10096#0" expanded="false" />
-            <element signature="e#9795#10096#0" expanded="false" />
             <element signature="e#9813#10001#0" expanded="false" />
             <element signature="e#9830#10000#1" expanded="false" />
-            <element signature="n#editLocation#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#10173#10901#0" expanded="false" />
-            <element signature="e#10340#10901#0" expanded="false" />
-            <element signature="e#10548#10901#0" expanded="false" />
             <element signature="e#10566#10805#0" expanded="false" />
             <element signature="e#10622#10804#1" expanded="false" />
             <element signature="e#10918#10994#0" expanded="false" />
+            <element signature="n#article#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#addArticle#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#11270#12686#0" expanded="false" />
-            <element signature="e#11428#12686#0" expanded="false" />
-            <element signature="e#11627#12686#0" expanded="false" />
             <element signature="e#11645#11802#0" expanded="false" />
             <element signature="e#11661#11801#1" expanded="false" />
-            <element signature="e#11952#12595#0" expanded="false" />
             <element signature="e#12088#12375#0" expanded="false" />
-            <element signature="e#12389#12595#0" expanded="false" />
             <element signature="e#12411#12580#0" expanded="false" />
-            <element signature="e#12696#12855#0" expanded="false" />
-            <element signature="e#12779#12855#0" expanded="false" />
             <element signature="n#deleteLocation#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#editArticle#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#13347#14779#0" expanded="false" />
-            <element signature="e#13505#14779#0" expanded="false" />
-            <element signature="e#13704#14779#0" expanded="false" />
             <element signature="e#13722#13872#0" expanded="false" />
             <element signature="e#13776#13871#1" expanded="false" />
-            <element signature="e#14015#14684#0" expanded="false" />
             <element signature="e#14151#14451#0" expanded="false" />
-            <element signature="e#14465#14684#0" expanded="false" />
             <element signature="e#14487#14669#0" expanded="false" />
             <element signature="e#14796#14872#0" expanded="false" />
             <element signature="n#uploadArticleImage#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#14979#16529#0" expanded="false" />
             <element signature="e#15010#16363#0" expanded="false" />
-            <element signature="e#15288#16349#0" expanded="false" />
             <element signature="e#15634#15972#0" expanded="false" />
             <element signature="e#15648#15971#1" expanded="false" />
             <element signature="e#15995#16124#0" expanded="false" />
             <element signature="e#16029#16123#1" expanded="false" />
-            <element signature="e#16160#16349#0" expanded="false" />
-            <element signature="e#16373#16529#0" expanded="false" />
             <element signature="n#addVideo#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="e#16752#16935#0" expanded="false" />
             <element signature="e#16766#16934#1" expanded="false" />
             <element signature="n#addVideoFile#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#17103#17254#0" expanded="false" />
             <element signature="e#17435#17712#0" expanded="false" />
             <element signature="e#17449#17711#1" expanded="false" />
             <element signature="n#manageMedia#0;n#AdminController#0;n#!!top" expanded="false" />
@@ -1115,24 +882,23 @@
             <element signature="n#deleteImage#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#deleteVid#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#deleteComment#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="n#viewUserComments#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#bgImage#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#uploadBgImg#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#19014#20613#0" expanded="false" />
             <element signature="e#19033#19072#0" expanded="false" />
             <element signature="e#19302#20490#0" expanded="false" />
-            <element signature="e#19656#20476#0" expanded="false" />
             <element signature="e#20022#20310#0" expanded="false" />
             <element signature="e#20036#20309#1" expanded="false" />
-            <element signature="e#20346#20476#0" expanded="false" />
-            <element signature="e#20500#20613#0" expanded="false" />
             <element signature="n#manageBgImg#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#searchUsers#0;n#AdminController#0;n#!!top" expanded="false" />
             <element signature="n#doSearchUsers#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="e#20980#21539#0" expanded="false" />
-            <element signature="e#21315#21539#0" expanded="false" />
-            <marker date="1431420007047" expanded="false" signature="765:779" placeholder="..." />
-            <marker date="1431420007047" expanded="false" signature="979:993" placeholder="..." />
-            <marker date="1431420007047" expanded="false" signature="1172:1186" placeholder="..." />
+            <element signature="n#viewAudit#0;n#AdminController#0;n#!!top" expanded="false" />
+            <element signature="e#21747#21858#0" expanded="false" />
+            <element signature="e#21747#21922#0" expanded="false" />
+            <element signature="n#deleteArticle#0;n#AdminController#0;n#!!top" expanded="false" />
+            <marker date="1432008886992" expanded="true" signature="765:779" placeholder="..." />
+            <marker date="1432008886992" expanded="true" signature="979:993" placeholder="..." />
+            <marker date="1432008886992" expanded="true" signature="1172:1186" placeholder="..." />
           </folding>
         </state>
       </provider>

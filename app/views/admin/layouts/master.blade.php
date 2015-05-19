@@ -11,10 +11,12 @@
     {{ HTML::style('font-awesome-4.2.0/css/font-awesome.min.css') }}
     {{ HTML::style('css/blueimp-gallery.min.css') }}
     {{ HTML::style('css/jquery.cleditor.css') }}
+    {{ HTML::style('css/datepicker.css') }}
 
 
     {{ HTML::script('js/jquery-1.11.0.min.js') }}
     {{ HTML::script('js/bootstrap.min.js') }}
+    {{ HTML::script('js/bootstrap-datepicker.js') }}
     {{ HTML::script('js/custom.js') }}
     {{ HTML::script('js/blueimp-gallery.min.js') }}
     {{ HTML::script('js/jquery.cleditor.js') }}

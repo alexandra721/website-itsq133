@@ -283,6 +283,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/views/admin/viewAuditSearch.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/confimPage.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/confirmPage.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/views/website/about.blade.php">
           <value>
             <set />

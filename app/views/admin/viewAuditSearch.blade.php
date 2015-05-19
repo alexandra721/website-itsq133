@@ -110,29 +110,29 @@
         </select>
     </div>
     <div class="col-md-9" id="oneDate">
-<!--        <form method="POST" action="/admin/searchAudit=1DATE">-->
-            <input type="hidden" value="{{$user->id}}" name="userId" id="userId"/>
-            <div class="col-md-10">
-                <input type="text" class="form-control datepicker" name="DATE1" id="opt1Date1" placeholder="Click here to search by date" readonly/>
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-success" id="search1">Search</button>
-            </div>
-<!--        </form>-->
+        <!--        <form method="POST" action="/admin/searchAudit=1DATE">-->
+        <input type="hidden" value="{{$user->id}}" name="userId" id="userId"/>
+        <div class="col-md-10">
+            <input type="text" class="form-control datepicker" name="DATE1" id="opt1Date1" placeholder="Click here to search by date" readonly/>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-success" id="search1">Search</button>
+        </div>
+        <!--        </form>-->
     </div>
     <div class="col-md-9" style="display: none;" id="twoDate">
-<!--        <form method="POST" action="/admin/searchAudit=2DATE">-->
-            <input type="hidden" value="{{$user->id}}" name="userId" />
-            <div class="col-md-5">
-                <input type="text" class="form-control datepicker" name="DATE1" id="opt2Date1" placeholder="Click here to search by date" readonly/>
-            </div>
-            <div class="col-md-5">
-                <input type="text" class="form-control datepicker" name="DATE2" id="opt2Date2" placeholder="Click here to search by date" readonly/>
-            </div>
-            <div class="col-md-2">
-                <button type="button" class="btn btn-success" id="search2">Search</button>
-            </div>
-<!--        </form>-->
+        <!--        <form method="POST" action="/admin/searchAudit=2DATE">-->
+        <input type="hidden" value="{{$user->id}}" name="userId" />
+        <div class="col-md-5">
+            <input type="text" class="form-control datepicker" name="DATE1" id="opt2Date1" placeholder="Click here to search by date" readonly/>
+        </div>
+        <div class="col-md-5">
+            <input type="text" class="form-control datepicker" name="DATE2" id="opt2Date2" placeholder="Click here to search by date" readonly/>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-success" id="search2">Search</button>
+        </div>
+        <!--        </form>-->
     </div>
 </div>
 @if(Session::has('successMsg'))

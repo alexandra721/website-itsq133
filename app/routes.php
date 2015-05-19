@@ -30,6 +30,9 @@ Route::group(array('before' => 'ROUTE-PROTECT'), function(){
     Route::get('/login', 'WebMainController@login');
     Route::get('/register', 'WebMainController@register');
     Route::post('/postComment/{locid}/{userid}', 'WebMainController@postComment');
+    Route::post('/changePass', 'WebMainController@changePass');
+    Route::post('/changeEmail', 'WebMainController@changeEmail');
+    Route::post('/changeEmail', 'WebMainController@changeEmail');
 });
 // WEBSITE ROUTES -- END
 
@@ -88,6 +91,8 @@ Route::group(array('before' => 'ADMIN'), function(){
     Route::get('/admin/auditTrail', 'AdminController@auditTrail');
     Route::post('/admin/auditTrailSearch', 'AdminController@auditTrailSearch');
     Route::get('/viewAudit={userid}', 'AdminController@viewAudit');
+    Route::get('/admin/searchAudit/1DATE/{date}/{userid}', 'AdminController@searchAudit1Date');
+    Route::get('/admin/searchAudit/2DATE/{date1}/{date2}/{userid}', 'AdminController@searchAudit2Date');
 });
 
 // ADMIN ROUTES -- END

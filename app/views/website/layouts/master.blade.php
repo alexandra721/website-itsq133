@@ -125,9 +125,9 @@
                     <div class="div-changeemail" style="display: none;">
                         <form method="POST" action="/changeEmail">
                             <input type="hidden" value="{{ @Auth::user()->id }}" name="user_id"/>
-                            <input type="text" class="profile-input form-control margin-bottom-10" placeholder="Enter old email" required="true"/>
-                            <input type="text" class="profile-input form-control margin-bottom-10" placeholder="Enter new email" required="true"/>
-                            <input type="text" class="profile-input form-control" style="margin-bottom: 2em;" placeholder="Confirm new email" required="true"/>
+                            <input type="text" name="oldEmail" class="profile-input form-control margin-bottom-10" placeholder="Enter old email" required="true"/>
+                            <input type="text" name="newEmail" class="profile-input form-control margin-bottom-10" placeholder="Enter new email" required="true"/>
+                            <input type="text" name="newEmailConfirm" class="profile-input form-control" style="margin-bottom: 2em;" placeholder="Confirm new email" required="true"/>
                             <button type="submit" class="btn btn-primary btn-block margin-bottom-10"><i class="fa fa-envelope-o"></i> Change Email</button>
                             <button type="button" class="btn btn-danger btn-block cancel-btn">Cancel</button>
                         </form>
@@ -136,9 +136,9 @@
                     <div class="div-changepass" style="display: none;">
                         <form method="POST" action="/changePass">
                             <input type="hidden" value="{{ @Auth::user()->id }}" name="user_id"/>
-                            <input type="password" class="profile-input form-control margin-bottom-10" placeholder="Enter old password" required="true"/>
-                            <input type="password" class="profile-input form-control margin-bottom-10" placeholder="Enter new password" required="true"/>
-                            <input type="password" class="profile-input form-control" style="margin-bottom: 2em;" placeholder="Confirm new password" required="true"/>
+                            <input type="password" name="oldPass" class="profile-input form-control margin-bottom-10" placeholder="Enter old password" required="true"/>
+                            <input type="password" name="newPass" class="profile-input form-control margin-bottom-10" placeholder="Enter new password" required="true"/>
+                            <input type="password" name="newPassConfirm" class="profile-input form-control" style="margin-bottom: 2em;" placeholder="Confirm new password" required="true"/>
                             <button type="submit" class="btn btn-primary btn-block margin-bottom-10" style="margin-top: 0.4em"><i class="glyphicon glyphicon-asterisk"></i> Change Password</button>
                             <button type="button" class="btn btn-danger btn-block cancel-btn">Cancel</button>
                         </form>
