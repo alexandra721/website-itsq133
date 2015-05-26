@@ -233,6 +233,8 @@ class AdminController extends \BaseController {
             return Redirect::back()->with('errorMsg', 'Location name must be filled out');
         }else if(strlen(trim(Input::get('locationDescription'))) == 0){
             return Redirect::back()->with('errorMsg', 'Location description must be filled out');
+        }else if(Location::where('name', Input::get('locationName'))->count() > 0){
+            return Redirect::back()->with('errorMsg', 'Location already exists');
         }else{
             Location::insert(array(
                 'name'  =>  strip_tags(Input::get('locationName')),

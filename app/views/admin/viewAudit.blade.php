@@ -104,32 +104,32 @@
 <hr/>
 <div class="col-md-12">
     <div class="col-md-3">
-        <select id="searchBy" name="searchBy" class="form-control" style="padding: 0;">
+        <select id="searchBy" name="searchBy" class="form-control" style="margin-bottom: 0.8em;">
             <option value="1DATE" <?php if(Input::old('searchBy') == '1DATE'){ echo('selected'); } ?>>Search by Date</option>
             <option value="2DATE" <?php if(Input::old('searchBy') == '2DATE'){ echo('selected'); } ?>>Search between two Dates</option>
         </select>
     </div>
-    <div class="col-md-9" id="oneDate">
+    <div class="col-md-9" id="oneDate" style="margin-bottom: 0.8em;">
 <!--        <form method="POST" action="/admin/searchAudit=1DATE">-->
             <input type="hidden" value="{{$user->id}}" name="userId" id="userId"/>
-            <div class="col-md-10">
+            <div class="col-md-10" style="padding: 0; margin: 0; margin-bottom: 0.8em;">
                 <input type="text" class="form-control datepicker" name="DATE1" id="opt1Date1" placeholder="Click here to search by date" readonly/>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2" style="padding: 0; margin: 0;">
                 <button type="button" class="btn btn-success" id="search1">Search</button>
             </div>
 <!--        </form>-->
     </div>
-    <div class="col-md-9" style="display: none;" id="twoDate">
+    <div class="col-md-9" style="display: none; margin-bottom: 0.8em;" id="twoDate">
 <!--        <form method="POST" action="/admin/searchAudit=2DATE">-->
             <input type="hidden" value="{{$user->id}}" name="userId" />
-            <div class="col-md-5">
+            <div class="col-md-5" style="padding: 0; margin: 0; margin-bottom: 0.8em;">
                 <input type="text" class="form-control datepicker" name="DATE1" id="opt2Date1" placeholder="Click here to search by date" readonly/>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5" style="padding: 0; margin: 0; margin-bottom: 0.8em;">
                 <input type="text" class="form-control datepicker" name="DATE2" id="opt2Date2" placeholder="Click here to search by date" readonly/>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2" style="padding: 0; margin: 0; margin-bottom: 0.8em;">
                 <button type="button" class="btn btn-success" id="search2">Search</button>
             </div>
 <!--        </form>-->

@@ -74,7 +74,7 @@
 
 <div class="row form-group">
     <form method="POST" action="/admin/auditTrailSearch">
-        <div class="col-md-3">
+        <div class="col-md-3" style="margin-bottom: 0.6em;">
             <select class="form-control" name="searchBy">
                 <option value="0">Search by..</option>
                 <option value="firstname">Firstname</option>
@@ -82,10 +82,10 @@
                 <option value="username">Username</option>
             </select>
         </div>
-        <div class="col-md-7" style="padding: 0;" >
+        <div class="col-md-7" style="margin-bottom: 0.6em;">
             <input type="text" placeholder="Enter search keyword here" name="searchWord" class="form-control"/>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2"  style="margin-bottom: 0.6em;">
             <button class="btn btn-primary btn-block"><i class="fa fa-search"></i> Search</button>
         </div>
     </form>

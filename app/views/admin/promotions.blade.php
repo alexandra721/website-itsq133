@@ -98,12 +98,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel-footer" style="border: solid 0.1em #BDC3C7">
-                    <div class="btn-group btnSet1_{{ $location->id }}" role="group" aria-label="...">
+                <div class="panel-footer" style="border: solid 0.1em #BDC3C7;">
+                    <div style="width: 100%" class="btn-group btnSet1_{{ $location->id }}" role="group" aria-label="...">
                         <button type="button" class="btn btn-default" onclick="location.href='/admin/article/{{ $location->id }}'"><i class="glyphicon glyphicon-paperclip"></i> Articles</button>
-                        <button type="button" class="btn btn-default uploadBtn" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Upload Image</button>
+                        <button type="button" class="btn btn-default uploadBtn" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Add Image</button>
 <!--                        <button type="button" class="btn btn-default uploadVideoBtn" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Embed Video</button>-->
-                        <button type="button" class="btn btn-default uploadVideoBtnFile" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Upload Video</button>
+                        <button type="button" class="btn btn-default uploadVideoBtnFile" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-upload"></i> Add Video</button>
                         <button type="button" class="btn btn-default editInfo" data-locid="{{ $location->id }}"><i class="glyphicon glyphicon-edit"></i> Edit Info</button>
                         <button type="button" class="btn btn-default" onclick="location.href='/admin/manageMedia/{{ $location->id }}'" "><i class="glyphicon glyphicon-edit"></i> Manage Media</button>
                         <button type="button" class="btn btn-danger deleteLocation" data-locid="{{ $location->id }}" data-locname="{{ $location->name }}"><i class="glyphicon glyphicon-remove-circle"></i> Delete</button>
