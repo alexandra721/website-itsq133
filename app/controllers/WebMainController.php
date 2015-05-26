@@ -43,13 +43,29 @@ class WebMainController extends \BaseController {
 
         // CHECK PASSWORD -- START
         if(!ctype_alnum(Input::get('password')) || !ctype_alnum(Input::get('confirm-password'))){
-            $msg = '<i class="fa fa-warning"></i> Password is alphanumeric only';
+            $msg = '<i class="fa fa-warning"></i> Please input valid data for password. Alphanumeric only.';
         }else if(strlen(Input::get('password')) < 5 || strlen(Input::get('confirm-password')) < 5){
             $msg = '<i class="fa fa-warning"></i> Password must be more than 5 characters';
         }else if(Input::get('password') != Input::get('confirm-password')){
             $msg = '<i class="fa fa-warning"></i> Password does not match';
         }
         // CHECK PASSWORD -- END
+
+        if(!ctype_alpha(str_replace(' ', '', trim(Input::get('firstname'))))){
+            $msg = '<i class="fa fa-warning"></i> Firstname cannot contain numbers and/or special characters (except spaces)';
+        }else if(strlen(trim(Input::get('firstname'))) == 0){
+            $msg = '<i class="fa fa-warning"></i> Please input valid data for firstname';
+        }
+
+        if(!ctype_alpha(str_replace(' ', '', trim(Input::get('lastname'))))){
+            $msg = '<i class="fa fa-warning"></i> Lastname cannot contain numbers and/or special characters (except spaces)';
+        }else if(strlen(trim(Input::get('lastname'))) == 0){
+            $msg = '<i class="fa fa-warning"></i> Please input valid data for lastname';
+        }
+
+        if(!$this->emailValidate(Input::get('email'))){
+            $msg = '<i class="fa fa-warning"></i> Please enter a valid email';
+        }
 
         if($msg == 'TRUE'){
             User::insert(array(

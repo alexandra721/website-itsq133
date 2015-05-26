@@ -52,6 +52,7 @@ class AdminController extends \BaseController {
         return Redirect::back();
 //        return Redirect::to('/admin/users');
     }
+
     public function activate($id){
         User::where('id', $id)->update(array('status' => 'ACTIVATED'));
         return Redirect::back();
@@ -157,7 +158,12 @@ class AdminController extends \BaseController {
     }
 
     public function general(){
-        return View::make('admin.general')->with('aboutus', Content::where('type', 'aboutus')->get())->with('slogans', Content::where('type', 'slogan')->get())->with('homeslogans', Content::where('type', 'homeslogan')->get());
+        return View::make('admin.general')
+            ->with('aboutus', Content::where('type', 'aboutus')->get())
+            ->with('slogans', Content::where('type', 'slogan')->get())
+            ->with('homeslogans', Content::where('type', 'homeslogan')->get())
+            ->with('email', Content::where('type', 'email')->pluck('content'))
+            ->with('mobileNum', Content::where('type', 'mobileNum')->pluck('content'));
     }
 
     public function updateSlogan(){
@@ -561,5 +567,30 @@ class AdminController extends \BaseController {
         return View::make('admin.viewAuditSearch')
             ->with('trails', AuditTrail::whereBetween(DB::raw('DATE(created_at)'), array($date1, $date2))->where('user_id', $userid)->paginate(10))
             ->with('user', User::where('id', $userid)->first());
+    }
+
+    public function updateContactus(){
+        if(!ctype_digit(Input::get('mobileNum'))){
+            return Redirect::back()->with('errorMsg', 'Number contact detail must be numbers only');
+        }
+
+        if(!$this->emailValidate(Input::get('email'))){
+            return Redirect::back()->with('errorMsg', 'Email contact detail must be a valid email');
+        }
+
+        Content::insert(array(
+            'content'   =>  Input::get('email'),
+            'type'      =>  'email',
+            'order'     =>  0,
+        ));
+
+        Content::insert(array(
+            'content'   =>  Input::get('mobileNum'),
+            'type'      =>  'mobileNum',
+            'order'     =>  0,
+        ));
+
+        return Redirect::back()
+            ->with('msg', 'Saving contact details success');
     }
 }

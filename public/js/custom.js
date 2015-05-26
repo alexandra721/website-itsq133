@@ -312,6 +312,7 @@ function scripts_Master(){
 }
 
 function scripts_General(){
+    $("#txtarea-contactus").cleditor();
     $("#txtarea-aboutus").cleditor();
     $("#txtarea-slogan").cleditor();
     $("#txtarea-homeslogan").cleditor();

@@ -17,10 +17,30 @@
     <i class="fa fa-check"></i> {{ Session::get('msg') }}
 </div>
 @endif
+
+@if(Session::has('errorMsg'))
+<div style="background-color: indianred; font-weight: bold; border: 1px solid darkred; padding: 0.8em; margin-bottom: 1em;">
+    <button type="button" class="close" aria-label="Close" onclick="$('.updatemsgDiv').fadeToggle()"><span aria-hidden="true">&times;</span></button>
+    <i class="fa fa-times"></i> {{ Session::get('errorMsg') }}
+</div>
+@endif
 <!--<textarea id="some-textarea" placeholder="Enter text ..."></textarea>-->
 <!--<script type="text/javascript">-->
 <!--    $('#some-textarea').wysihtml5();-->
 <!--</script>-->
+
+<div class="panel panel-primary">
+    <div class="panel-heading aboutus-heading" onclick="$('.aboutus-body').slideToggle();"><i class="fa fa-heart"></i> Contact Details</div>
+    <div class="panel-body aboutus-body">
+        {{ Form::open(array('url' => '/admin/updateContactus', 'method' => 'POST')) }}
+            <input style="margin-bottom: 0.8em" value="{{@$email}}" name="email" type="email" required="required" class="form-control" placeholder="Enter the email contact detail here"/>
+            <input style="margin-bottom: 0.8em" value="{{@$mobileNum}}" name="mobileNum" type="text" required="required" class="form-control" placeholder="Enter the number contact detail here"/>
+        <button type="submit" class="btn btn-success pull-right">Save</button>
+        {{ Form::close() }}
+    </div>
+    <div class="panel-footer"></div>
+</div>
+
 <div class="panel panel-primary">
     <div class="panel-heading aboutus-heading" onclick="$('.aboutus-body').slideToggle();"><i class="fa fa-heart"></i> About Us</div>
     <div class="panel-body aboutus-body">

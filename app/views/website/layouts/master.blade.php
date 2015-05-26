@@ -97,8 +97,10 @@
                     <h4>{{ Content::where('type', 'slogan')->pluck('content') }}</h4>
                    {{ Content::where('type', 'homeslogan')->pluck('content') }}
                     <div class="contact-details">
-                        (63) 927-6274-649<br/>
-                        loremipsum@email.com
+                        {{ Content::where('type', 'mobileNum')->pluck('content') }}<br/>
+                        {{ Content::where('type', 'email')->pluck('content') }}
+<!--                        (63) 927-6274-649<br/>-->
+<!--                        loremipsum@email.com-->
                     </div>
                 </div>
                 <div class="modal-footer custom-footer">
